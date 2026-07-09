@@ -1,0 +1,105 @@
+<section class="listing-hero">
+  <div class="listing-hero__inner listing-hero__inner--slider">
+    <div class="slider-panel">
+      
+        <div class="slider-stage">
+          <div *ngIf="currentSlide.image.endsWith('.mp4')" class="video-container" (click)="openVideoModal(currentSlide.title, currentSlide.image, 'Premium Showcase')">
+            <video 
+              [src]="currentSlide.image" 
+              class="playable-video-preview"
+              autoplay 
+              muted 
+              loop 
+              playsinline>
+            </video>
+            <div class="video-overlay-play">
+              <div class="play-icon-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <img 
+            *ngIf="!currentSlide.image.endsWith('.mp4')"
+            [src]="currentSlide.image" 
+            [alt]="currentSlide.title">
+        </div>
+
+      <div class="slider-overlay">
+        <div class="slider-copy">
+          <p class="eyebrow">Property showcase</p>
+          <h1>{{ currentSlide.title }}</h1>
+          <p>{{ currentSlide.description }}</p>
+        </div>
+
+        <div class="slider-controls">
+          <button type="button" (click)="previousSlide()" aria-label="Previous slide">&#8249;</button>
+          <button type="button" (click)="nextSlideFromControl()" aria-label="Next slide">&#8250;</button>
+        </div>
+      </div>
+
+      <div class="slider-dots">
+        <button
+          *ngFor="let slide of slides; let i = index"
+          type="button"
+          [class.is-active]="i === currentSlideIndex"
+          (click)="goToSlide(i)"
+          [attr.aria-label]="'Go to slide ' + (i + 1)">
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="listing-grid">
+  <article class="listing-card" *ngFor="let property of promotionlist">
+    <div class="image-container">
+      
+      <div *ngIf="property.image.endsWith('.mp4')" class="video-container" (click)="openVideoModal(property.title, property.image, property.type + ' • ' + property.size)">
+        <video 
+          [src]="property.image" 
+          class="playable-video-preview"
+          muted 
+          [muted]="true"
+          loop 
+          playsinline>
+        </video>
+        <div class="video-overlay-play">
+          <div class="play-icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <img 
+        *ngIf="!property.image.endsWith('.mp4')"
+        [src]="property.image" 
+        [alt]="property.title">
+    </div>
+    
+    </article>
+</section>
+
+<div class="video-lightbox" *ngIf="activeModalVideoSrc" (click)="closeVideoModal()">
+  <div class="video-lightbox__wrapper" (click)="$event.stopPropagation()">
+    
+    <div class="video-lightbox__header">
+      <div class="video-lightbox__meta-details">
+        <span class="video-lightbox__tag">{{ modalSubheading }}</span>
+        <h3 class="video-lightbox__title">{{ modalHeadingTitle }}</h3>
+      </div>
+      <button type="button" class="video-lightbox__close-btn" (click)="closeVideoModal()" aria-label="Close video player">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="video-lightbox__player-frame">
+      <video [src]="activeModalVideoSrc" autoplay controls playsinline></video>
+    </div>
+  </div>
+</div>

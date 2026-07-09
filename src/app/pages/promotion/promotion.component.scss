@@ -1,0 +1,525 @@
+/* ==========================================================================
+   1. Design Tokens & Variables
+   ========================================================================== */
+$brand-navy-dark:  #0f2130;
+$brand-navy-light: #193245;
+$brand-navy-deep:  #0b151f;
+$brand-navy-text:  #112433;
+
+$brand-gold:       #c5973e;
+$brand-gold-light: #f0d58a;
+$brand-gold-dark:  #9a7423;
+
+$neutral-white:    #ffffff;
+$neutral-cream:    #fdf8ee;
+$neutral-border:   #eaeaea;
+$text-muted:       #62727f;
+$text-soft-blue:   #c9d6dd;
+
+/* Reusable Mixin for Shared Media Containers (Image/Video) */
+@mixin media-fill {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   2. Global Typographic & Structural Elements
+   ========================================================================== */
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: $brand-gold;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.listing-hero {
+  padding: 3rem 1.5rem 4rem;
+  background: linear-gradient(135deg, $brand-navy-dark 0%, $brand-navy-light 100%);
+  color: $neutral-white;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &--slider {
+      padding: 0;
+    }
+  }
+}
+
+/* ==========================================================================
+   3. Slider Component
+   ========================================================================== */
+.slider-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba($neutral-white, 0.08);
+  background: rgba($neutral-white, 0.02);
+  box-shadow: 0 25px 60px rgba(5, 12, 18, 0.4);
+
+  .slider-stage {
+    position: relative;
+    aspect-ratio: 16 / 7;
+    min-height: 360px;
+    background: $brand-navy-deep;
+
+    img, video {
+      @include media-fill;
+    }
+  }
+
+  .slider-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem 2.5rem;
+    background: linear-gradient(
+      180deg, 
+      rgba($brand-navy-deep, 0) 0%, 
+      rgba($brand-navy-deep, 0.6) 50%, 
+      rgba($brand-navy-deep, 0.95) 100%
+    );
+    z-index: 1;
+  }
+
+  .slider-copy {
+    max-width: 760px;
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    p:last-child {
+      margin-top: 1rem;
+      max-width: 620px;
+      line-height: 1.75;
+      color: $text-soft-blue;
+    }
+  }
+
+  .slider-controls {
+    display: flex;
+    gap: 0.75rem;
+    align-self: flex-end;
+    margin-bottom: 0.5rem;
+    z-index: 2;
+
+    button {
+      width: 52px;
+      height: 52px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba($neutral-white, 0.1);
+      color: $neutral-white;
+      font-size: 1.4rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: background 0.25s ease, transform 0.2s ease;
+
+      &:hover {
+        background: rgba($neutral-white, 0.2);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .slider-dots {
+    position: absolute;
+    left: 2.5rem;
+    bottom: 1.25rem;
+    display: flex;
+    gap: 0.6rem;
+    z-index: 2;
+
+    button {
+      width: 10px;
+      height: 10px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba($neutral-white, 0.3);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        background: rgba($neutral-white, 0.6);
+      }
+
+      &.is-active {
+        background: $brand-gold-light;
+        width: 24px;
+        border-radius: 999px;
+      }
+    }
+  }
+}
+
+// videoplay//
+/* ==========================================================================
+   Luxury Video Cinema Lightbox UI
+   ========================================================================== */
+.playable-video-preview {
+  cursor: pointer;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(#0f2130, 0.2);
+    transition: background 0.3s ease;
+  }
+
+  &:hover::after {
+    background: rgba(#0f2130, 0);
+  }
+}
+// .listing-hero__inner,
+// .listing-grid {
+//   max-width: 60%;
+//   margin: 0 auto;
+// }
+.video-lightbox {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(6, 12, 18, 0.88); /* Rich Deep Indigo/Black slate tint */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 2rem 1.5rem;
+  animation: lightboxFadeIn 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+
+  &__wrapper {
+    width: 100%;
+    max-width: 80%;
+    background: #0b151f;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+    transform: scale(0.95);
+    animation: lightboxContentScale 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s forwards;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.75rem;
+    background: linear-gradient(180deg, #112433 0%, #0b151f 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  &__meta-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  &__tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c5973e; /* Matches your premium brand gold token */
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.3;
+  }
+
+  &__close-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 0;
+    color: #f8f3f3;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #f50909;
+      transform: rotate(90deg);
+    }
+  }
+
+  &__player-frame {
+    width: 100%;
+    background: #000000;
+    aspect-ratio: 16 / 9; /* Standard widescreen theatrical framing */
+    display: flex;
+    align-items: center;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+}
+/* ==========================================================================
+   Play Icon Overlay Core Layout Structure
+   ========================================================================== */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.video-overlay-play {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#0f2130, 0.15); /* Light premium brand tint drop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  transition: background 0.3s ease;
+}
+
+.play-icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(#ffffff, 0.9);
+  color: #f21414; /* Your brand gold accent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 0 0px rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+  svg {
+    width: 22px;
+    height: 22px;
+    margin-left: 3px; /* Visual optical alignment adjustments for triangle centers */
+  }
+}
+
+/* Hover Interactive Mechanics */
+.video-container:hover {
+  .video-overlay-play {
+    background: rgba(#0f2130, 0.3); /* Darkens slightly on hover to boost contrast */
+  }
+
+  .play-icon-circle {
+    background: #f21414; /* Switches circle to luxury corporate gold */
+    color: #ffffff; /* Triangle flips white */
+    transform: scale(1.12);
+    box-shadow: 0 15px 30px rgba(154, 116, 35, 0.4), 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+}
+
+/* Specific component structure alignment fallback */
+.slider-stage .video-container,
+.image-container .video-container {
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+/* ==========================================================================
+   Fluid Lightbox Motion Keyframes
+   ========================================================================== */
+@keyframes lightboxFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lightboxContentScale {
+  from { 
+    opacity: 0;
+    transform: scale(0.95); 
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1); 
+  }
+}
+
+/* Compact adaptation adjustment metrics for mid-tier tablets */
+@media (max-width: 768px) {
+  .video-lightbox {
+    padding: 1rem 0.75rem;
+
+    &__header {
+      padding: 1rem 1.25rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* ==========================================================================
+   4. Listing Cards & Grid Component
+   ========================================================================== */
+.listing-grid {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.listing-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: $neutral-white;
+  border: 1px solid $neutral-border;
+  box-shadow: 0 4px 20px rgba(17, 36, 51, 0.04);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(17, 36, 51, 0.1);
+
+    img, video {
+      transform: scale(1.06);
+    }
+    
+    a {
+      color: $brand-navy-text;
+    }
+  }
+
+  .image-container {
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    img, video {
+      @include media-fill;
+    }
+  }
+
+  &__body {
+    padding: 1.75rem;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    span {
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      background: $neutral-cream;
+      color: $brand-gold-dark;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    color: $brand-navy-text;
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  p {
+    margin: 0.85rem 0 1.5rem;
+    color: $text-muted;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  a {
+    color: $brand-gold-dark;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.2s ease;
+  }
+}
+
+/* ==========================================================================
+   5. Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 960px) {
+  .listing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .slider-panel {
+    .slider-stage {
+      aspect-ratio: auto;
+      min-height: 400px;
+    }
+
+    .slider-overlay {
+      padding: 2rem 1.5rem;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-end;
+      gap: 1.5rem;
+    }
+
+    .slider-controls {
+      align-self: flex-start;
+    }
+
+    .slider-dots {
+      left: 1.5rem;
+    }
+  }
+
+  .listing-grid {
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
+  }
+}

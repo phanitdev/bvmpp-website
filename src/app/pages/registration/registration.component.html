@@ -1,0 +1,58 @@
+<section class="registration">
+  <div class="registration__intro">
+    <p class="eyebrow">Register your interest</p>
+    <h1>Book a site visit with Borey Vimean Phnom Penh.</h1>
+    <p>
+      Share your details and our team can follow up for availability, pricing discussion, or a scheduled project tour.
+    </p>
+  </div>
+
+  <div class="registration__grid">
+    <div class="registration__panel">
+      <h2>Why buyers contact us</h2>
+      <ul>
+        <li>Preview current property availability</li>
+        <li>Discuss homeownership or investment plans</li>
+        <li>Arrange a guided project visit</li>
+        <li>Receive support on next purchase steps</li>
+      </ul>
+    </div>
+
+    <form class="registration__form" #leadForm="ngForm" (ngSubmit)="submitForm()">
+      <label>
+        Full name
+        <input type="text" name="fullName" ngModel required>
+      </label>
+
+      <label>
+        Phone number
+        <input type="tel" name="phone" ngModel required>
+      </label>
+
+      <label>
+        Email address
+        <input type="email" name="email" ngModel>
+      </label>
+
+      <label>
+        Interested property type
+        <select name="propertyType" ngModel>
+          <option value="Villa">Villa</option>
+          <option value="Residence">Residence</option>
+          <option value="Shophouse">Shophouse</option>
+        </select>
+      </label>
+
+      <label>
+        Message
+        <textarea name="message" rows="5" ngModel placeholder="Tell us what type of property or visit you want to arrange."></textarea>
+      </label>
+
+      <button type="submit" [disabled]="leadForm.invalid">Submit inquiry</button>
+
+      <p class="success" *ngIf="submitted">
+        Thank you. Your inquiry has been prepared and the Borey Vimean Phnom Penh team can follow up next.
+      </p>
+    </form>
+  </div>
+</section>

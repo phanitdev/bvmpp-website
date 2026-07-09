@@ -1,0 +1,21 @@
+<section class="new-building-hero">
+  <div class="new-building-hero__inner">
+    <p class="eyebrow">New Building</p>
+    <h1>See the latest construction progress at Borey Vimean Phnom Penh.</h1>
+    <p>
+      Follow the newest building phase through on-site progress images, aerial views, and close-up construction updates from the development area.
+    </p>
+  </div>
+</section>
+
+<section class="new-building-gallery">
+  <div class="gallery-grid">
+    <article class="gallery-card" *ngFor="let image of images">
+      <img [src]="image.src" [alt]="image.title">
+      <div class="gallery-card__body">
+        <h2>{{ image.title }}</h2>
+        <p>{{ image.description }}</p>
+      </div>
+    </article>
+  </div>
+</section>

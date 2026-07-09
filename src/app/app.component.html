@@ -1,0 +1,25 @@
+<header class="site-header">
+  <nav class="navbar">
+    <a class="brand" routerLink="/home" aria-label="Borey Vimean Phnom Penh home">
+      <img src="assets/images/bvmpp.png" alt="Borey Vimean Phnom Penh logo">
+      <span>
+        <strong>Borey Vimean Phnom Penh</strong>
+        <small>លំនៅឋាននៃសុភមង្គល</small>
+      </span>
+    </a>
+
+    <div class="nav-links">
+      <a [routerLink]="['/home']" routerLinkActive="cta-link">About</a>
+      <a routerLink="/property-list" routerLinkActive="cta-link">Properties</a>
+      <a routerLink="/new-building" routerLinkActive="cta-link">New Building</a>
+       <a routerLink="/promotion" routerLinkActive="cta-link">Promotion</a>
+      <a [routerLink]="['/home']" routerLinkActive="cta-link">Location</a>
+      <a routerLink="/registration" class="cta-link">Book a Visit</a>
+    
+    </div>
+  </nav>
+</header>
+
+<main class="page-shell">
+  <router-outlet></router-outlet>
+</main>

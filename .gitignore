@@ -1,0 +1,28 @@
+# លុបចោល Folder កូដជំនួយដែលទាញមកពីអុីនធឺណិត (មិនត្រូវរុញទៅ Git ឡើយ)
+node_modules/
+
+# លុបចោល Folder ដែលកើតចេញពីការ Build គម្រោង
+dist/
+.angular/
+
+# លុបចោលរាល់ឯកសារវីដេអូធំៗទាំងអស់ ដើម្បីកុំឱ្យជាប់ limit 100MB របស់ GitLab
+*.mp4
+*.mov
+*.avi
+*.wmv
+
+# លុបចោលឯកសារ Configuration ផ្ទាល់ខ្លួនរបស់កម្មវិធីសរសេរកូដ
+.vscode/
+.idea/
+*.suo
+*.ntvsca
+*.njsproj
+*.sln
+*.swp
+
+# លុបចោលឯកសារកំណត់ហេតុ (Logs)
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

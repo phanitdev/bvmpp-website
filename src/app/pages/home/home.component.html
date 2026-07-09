@@ -1,0 +1,115 @@
+<section class="hero">
+  <div class="hero__video-wrapper">
+    <video 
+      src="assets/videos/promotion1.mp4" 
+      autoplay 
+      muted 
+      [muted]="true" 
+      loop 
+      playsinline 
+      class="hero__video-bg">
+    </video>
+  </div>
+  <div class="hero__overlay"></div>
+  
+  <div class="hero__content">
+    <div class="hero__copy">
+      <p class="eyebrow">Borey Vimean Phnom Penh</p>
+      <h1>Professional real estate living designed for modern families in Phnom Penh.</h1>
+      <p class="hero__intro">
+        Explore a residential community that blends elegant architecture, strong accessibility, and the confidence of a trusted local development brand.
+      </p>
+
+      <div class="hero__actions">
+        <a routerLink="/property-list" class="button button--primary">View Properties</a>
+        <a routerLink="/registration" class="button button--primary">Register Interest</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stats__inner">
+    <article class="stat" *ngFor="let stat of stats">
+      <strong>{{ stat.value }}</strong>
+      <span>{{ stat.label }}</span>
+    </article>
+  </div>
+</section>
+
+<section class="about section" id="about">
+  <div class="section__intro">
+    <p class="eyebrow">About the project</p>
+    <h2>A real estate brand shaped around prestige, comfort, and practical city access.</h2>
+  </div>
+
+  <div class="about__grid">
+    <div class="about__copy">
+      <p>
+        Borey Vimean Phnom Penh presents a refined residential environment for buyers who want more than a house. The project combines attractive exterior design, organized internal roads, and a clean neighborhood character that supports both lifestyle and long-term investment.
+      </p>
+      <ul>
+        <li *ngFor="let item of highlights">{{ item }}</li>
+      </ul>
+    </div>
+
+    <div class="about__media">
+      <img src="assets/images/home1.jpg" alt="Main entrance and development building at Borey Vimean Phnom Penh">
+    </div>
+  </div>
+</section>
+
+<section class="properties section">
+  <div class="section__intro">
+    <p class="eyebrow">Featured opportunities</p>
+    <h2>Property options for family living and business growth.</h2>
+  </div>
+
+<section class="listing-grid">
+  <article class="listing-card" *ngFor="let property of propertyTypes">
+    <div class="image-container">
+      <img [src]="property.image" [alt]="property.title">
+    </div>
+    
+    <div class="listing-card__body">
+      <div class="listing-card__meta">
+        <span>{{ property.type }}</span>
+        <span>{{ property.size }}</span>
+        <span>{{ property.purpose }}</span>
+      </div>
+      <h2>{{ property.title }}</h2>
+      <p>{{ property.description }}</p>
+      <a routerLink="/registration">Request details</a>
+    </div>
+  </article>
+</section>
+
+<section class="location section" id="location">
+  <div class="section__intro">
+    <p class="eyebrow">Location and contact</p>
+    <h2>Plan your visit and speak with the sales team.</h2>
+  </div>
+
+  <div class="location__grid">
+    <div class="location__panel">
+      <h3>Why location matters</h3>
+      <p>
+        A strong borey project depends on access. This community is positioned to support daily commuting, school runs, client visits, and family convenience with a clean neighborhood identity.
+      </p>
+      <p>
+        Use the registration page to request a consultation, project presentation, or site visit with the Borey Vimean Phnom Penh team.
+      </p>
+    </div>
+
+    <div class="location__panel location__panel--accent">
+      <h3>Visit purpose</h3>
+      <ul>
+        <li>Home purchase consultation</li>
+        <li>Investment opportunity discussion</li>
+        <li>Project walkthrough and availability update</li>
+        <li>Financing and buyer support information</li>
+      </ul>
+      <a routerLink="/registration" class="button button--primary">Schedule a Visit</a>
+    </div>
+  </div>
+</section>
