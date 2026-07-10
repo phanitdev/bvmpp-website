@@ -9,8 +9,9 @@ import { PropertyListComponent } from './pages/property-list/property-list.compo
 import { CreatePropertyComponent } from './pages/create-property/create-property.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NewBuildingComponent } from './pages/new-building/new-building.component';
 import { PromotionComponent } from './pages/promotion/promotion.component';
+import { NewBuildingsComponent } from './pages/new-buildings/new-buildings.component';
+import { NewPromotionComponent } from './pages/new-promotion/new-promotion.component';
 
 
 @NgModule({
@@ -21,8 +22,9 @@ import { PromotionComponent } from './pages/promotion/promotion.component';
     CreatePropertyComponent,
     RegistrationComponent,
     HomeComponent,
-    NewBuildingComponent,
-    PromotionComponent
+    PromotionComponent,
+    NewBuildingsComponent,
+    NewPromotionComponent
 
   ],
   imports: [

@@ -191,29 +191,36 @@
   align-items: center;
   min-height: 80vh; /* Adjust base banner height threshold */
 
-  &__video-wrapper {
+&__video-wrapper {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
+    pointer-events: none; 
   }
 
-  &__video-bg {
+  &___video-bg {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Acts exactly like background-size: cover */
+    object-fit: cover;
+    object-position: center;
   }
 
   &__overlay {
     position: absolute;
     inset: 0;
     z-index: 2;
+    
+
     background: linear-gradient(
       135deg, 
-      rgba(#0a131c, 0.85) 0%, 
-      rgba(#0f2130, 0.6) 100%
-    ); /* Premium gradient shield protecting text legibility */
+      rgba(10, 19, 28, 0.4) 0%, 
+      rgba(15, 33, 48, 0.2) 100%
+    ); 
+    
+    pointer-events: none; 
+
   }
 
   // &__content {
@@ -224,7 +231,7 @@
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////
 .stats {
-  background: #0f1d2a;
+  background:rgb(10 69 108 / 90%);
   color: #ffffff;
   padding: 1.4rem 1.5rem;
 }
@@ -459,4 +466,61 @@
     gap: 1.5rem;
   }
 }
-////////////////////////////////////////////////
+
+
+/* ==========================================================================
+   Hero Content Responsive - បង្រួមទំហំអក្សរលើ Mobile ឱ្យស្អាតសមសួន
+   ========================================================================== */
+
+/* ទម្រង់ធម្មតាលើ Desktop (Screen ធំ) */
+.hero__content {
+  /* រក្សាទុក Styles ធម្មតារបស់អ្នក (ឧទាហរណ៍៖ padding, alignment...) */
+  
+  h1, .hero-title {
+    font-size: 3.5rem; /* ទំហំធំធម្មតាលើ Desktop */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  p, .hero-description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+}
+
+/* 💡 ផ្នែក Responsive Breakpoint: កែសម្រួលពេលមើលលើអេក្រង់ទូរស័ព្ទដៃ */
+@media (max-width: 992px) {
+  .hero__content {
+    /* បន្ថយ Padding ខាងឆ្វេងសងខាងបន្តិចលើ Mobile ដើម្បីកុំឱ្យអក្សរបុកគែមអេក្រង់ */
+    padding: 0 1.5rem !important; 
+    
+    /* 🌟 បង្រួមអក្សរចំណងជើងធំ "Professional real estate living..." ឱ្យតូចល្មមស្អាត */
+    h1, .hero-title {
+      font-size: 1.85rem !important;      /* បង្រួមពីធំមកសល់ទំហំសមល្មមអានលើ Mobile */
+      line-height: 1.3 !important;
+      margin-bottom: 1rem !important;
+      letter-spacing: -0.01em;
+    }
+
+    /* 🌟 បង្រួមអក្សរពណ៌សរៀបរាប់ខាងក្រោម "Explore a residential community..." */
+    p, .hero-description {
+      font-size: 0.9rem !important;       /* បង្រួមតូចស្លីមងាយស្រួលអាន និងមិនបាំងមុខមនុស្សក្នុងវីដេអូ */
+      line-height: 1.5 !important;
+      margin-bottom: 1.5rem !important;
+      opacity: 0.85;                      /* បន្ថយភាពច្បាស់ស្រាលៗដើម្បីឱ្យមើលទៅ Premium */
+    }
+
+    /* 💡 បង្រួមទំហំប៊ូតុងទាំងពីរ (View Properties & Register) ឱ្យសមាមាត្រនឹងអក្សរតូច */
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;             /* តម្រៀបប៊ូតុងចុះក្រោមលើ Mobile ដើម្បីកុំឱ្យបុកគ្នាផ្ដេក */
+      gap: 0.75rem;
+      
+      .btn {
+        width: 100%;                      /* ឱ្យប៊ូតុងលាតពេញទទឹងស្មើគ្នា */
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.9rem !important;
+      }
+    }
+  }
+}

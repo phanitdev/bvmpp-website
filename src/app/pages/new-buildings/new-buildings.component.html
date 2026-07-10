@@ -1,0 +1,51 @@
+<section class="listing-hero">
+  <div class="listing-hero__inner listing-hero__inner--slider">
+    <div class="slider-panel">
+      <div class="slider-stage">
+        <img [src]="currentSlide.image" [alt]="currentSlide.title">
+      </div>
+
+      <div class="slider-overlay">
+        <div class="slider-copy">
+          <p class="eyebrow">Property showcase</p>
+          <h1>{{ currentSlide.title }}</h1>
+          <p>{{ currentSlide.description }}</p>
+        </div>
+
+        <div class="slider-controls">
+          <button type="button" (click)="previousSlide()" aria-label="Previous slide">&#8249;</button>
+          <button type="button" (click)="nextSlideFromControl()" aria-label="Next slide">&#8250;</button>
+        </div>
+      </div>
+
+      <div class="slider-dots">
+        <button
+          *ngFor="let slide of slides; let i = index"
+          type="button"
+          [class.is-active]="i === currentSlideIndex"
+          (click)="goToSlide(i)"
+          [attr.aria-label]="'Go to slide ' + (i + 1)">
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="listing-grid">
+  <article class="listing-card" *ngFor="let property of newBuildings">
+    <div class="image-container">
+      <img [src]="property.image" [alt]="property.title">
+    </div>
+    
+    <div class="listing-card__body">
+      <div class="listing-card__meta">
+        <span>{{ property.type }}</span>
+        <span>{{ property.size }}</span>
+        <span>{{ property.purpose }}</span>
+      </div>
+      <h2>{{ property.title }}</h2>
+      <p>{{ property.description }}</p>
+      <a routerLink="/registration">Request details</a>
+    </div>
+  </article>
+</section>

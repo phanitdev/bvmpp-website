@@ -8,14 +8,24 @@
       </span>
     </a>
 
-    <div class="nav-links">
-      <a [routerLink]="['/home']" routerLinkActive="cta-link">About</a>
-      <a routerLink="/property-list" routerLinkActive="cta-link">Properties</a>
-      <a routerLink="/new-building" routerLinkActive="cta-link">New Building</a>
-       <a routerLink="/promotion" routerLinkActive="cta-link">Promotion</a>
-      <a [routerLink]="['/home']" routerLinkActive="cta-link">Location</a>
-      <a routerLink="/registration" class="cta-link">Book a Visit</a>
-    
+    <button class="menu-toggle" 
+            [class.open]="isMenuOpen" 
+            (click)="isMenuOpen = !isMenuOpen" 
+            aria-label="Toggle navigation">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+    </button>
+
+    <div class="nav-links" [class.show]="isMenuOpen">
+      <a [routerLink]="['/home']" routerLinkActive="cta-link" (click)="isMenuOpen = false">About</a>
+      <a routerLink="/property-list" routerLinkActive="cta-link" (click)="isMenuOpen = false">Properties</a>
+      <a routerLink="/new-buildings" routerLinkActive="cta-link" (click)="isMenuOpen = false">New Buildings</a>
+      <a routerLink="/promotion" routerLinkActive="cta-link" (click)="isMenuOpen = false">Promotion</a>
+      <a [routerLink]="['/home']" routerLinkActive="cta-link" (click)="isMenuOpen = false">Location</a>
+      <a routerLink="/new-promotion" routerLinkActive="cta-link" (click)="isMenuOpen = false">New-Promotion</a>
+      <a routerLink="/registration" class="cta-link" (click)="isMenuOpen = false">Book a Visit</a>
+   
     </div>
   </nav>
 </header>

@@ -15,6 +15,7 @@
   padding: 3rem 1.5rem 4rem; /* Increased padding for a more spacious, luxury feel */
   background: linear-gradient(135deg, #0f2130 0%, #193245 100%); /* Adjusted angle for richer depth */
   color: #ffffff;
+  //  background-image: url('../../../assets/images/new-building-01.png');
 }
 
 /* ==========================================================================
@@ -354,18 +355,18 @@
 
   /* 🌟 ចំណុចគន្លឹះ៖ ប្តូរមកជា ២ ជួរទន្ទឹមគ្នានៅលើទូរស័ព្ទដៃ */
   .listing-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* បង្ហាញ ២ កាតទន្ទឹមគ្នា */
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; 
     padding: 1.5rem 0.5rem 3rem !important;
-    gap: 0.75rem !important; /* បន្ថយគម្លាតចន្លោះកាត ដើម្បីកុំឱ្យរុញគ្នាខ្លាំង */
-    width: 96% !important;   /* ពង្រីក Grid ឱ្យលាតជិតដល់គែមអេក្រង់ */
+    gap: 0.75rem !important; 
+    width: 96% !important;   
   }
   
-  /* 💡 បង្រួមអក្សរ និង Padding ក្នុង Card នីមួយៗឱ្យសមនឹង ២ ជួរ */
+  
   .listing-card {
-    border-radius: 8px !important; /* បន្ថយភាពមូលគែមបន្តិចឱ្យមើលទៅស្លីម */
+    border-radius: 8px !important; 
     
     .listing-card__body {
-      padding: 0.85rem !important; /* បន្ថយគម្លាតខាងក្នុងកាត ដើម្បីទុកកន្លែងឱ្យអក្សរ */
+      padding: 0.85rem !important; 
     }
 
     .listing-card__meta {
@@ -373,33 +374,33 @@
       margin-bottom: 0.5rem !important;
       
       span {
-        padding: 0.2rem 0.4rem !important; /* បង្រួម Tag ព័ត៌មាន (Villa, ទំហំ) ឱ្យតូច */
+        padding: 0.2rem 0.4rem !important; 
         font-size: 0.65rem !important;
         letter-spacing: 0;
       }
     }
 
     h2 {
-      font-size: 1rem !important; /* បង្រួមចំណងជើងផ្ទះ (เช่น Luxury Villa) ឱ្យសមល្មម ២ ជួរ */
+      font-size: 1rem !important; 
       line-height: 1.2 !important;
     }
     
     p {
-      font-size: 0.78rem !important; /* បង្រួមអក្សររៀបរាប់ */
+      font-size: 0.78rem !important; 
       line-height: 1.4 !important;
       margin: 0.5rem 0 1rem !important;
     }
 
     a {
-      font-size: 0.82rem !important; /* បង្រួមប៊ូតុង Request details */
+      font-size: 0.82rem !important; 
     }
   }
 }
 
-/* សម្រាប់អេក្រង់ទូរស័ព្ទតូចបំផុត */
+
 @media (max-width: 420px) {
   .listing-grid {
-    gap: 0.5rem !important; /* កាន់តែតូច គម្លាតកាន់តែជិតគ្នា ដើម្បីកុំឱ្យធ្លាក់ជួរ */
+    gap: 0.5rem !important; 
     padding: 1.5rem 0.25rem 3rem !important;
   }
   

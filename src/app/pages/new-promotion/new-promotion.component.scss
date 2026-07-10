@@ -15,6 +15,7 @@
   padding: 3rem 1.5rem 4rem; /* Increased padding for a more spacious, luxury feel */
   background: linear-gradient(135deg, #0f2130 0%, #193245 100%); /* Adjusted angle for richer depth */
   color: #ffffff;
+  //  background-image: url('../../../assets/images/new-building-01.png');
 }
 
 /* ==========================================================================
@@ -52,8 +53,8 @@
   border-radius: 12px; /* Smoother, more modern rounded corners */
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.02);
-  box-shadow: 0 25px 60px rgba(5, 12, 18, 0.4); 
-  margin-top: 80px;
+  box-shadow: 0 25px 60px rgba(5, 12, 18, 0.4); /* Deeper, softer shadow to ground the element */
+  margin-top: 80px
 }
 
 .slider-stage {
@@ -61,6 +62,7 @@
   aspect-ratio: 16 / 7;
   min-height: 360px;
   background: #0b151f;
+  
 }
 
 /* Fixes distorted images and adds a clean fade-in */

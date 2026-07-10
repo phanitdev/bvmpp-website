@@ -4,8 +4,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { PropertyListComponent } from './pages/property-list/property-list.component';
-import { NewBuildingComponent } from './pages/new-building/new-building.component';
 import { PromotionComponent } from './pages/promotion/promotion.component';
+import { NewBuildingsComponent } from './pages/new-buildings/new-buildings.component';
+import { NewPromotionComponent } from './pages/new-promotion/new-promotion.component';
 
 const routes: Routes = [
       {
@@ -30,12 +31,16 @@ const routes: Routes = [
         component:PropertyListComponent
       },
       {
-        path:'new-building',
-        component:NewBuildingComponent
-      },
-      {
         path:'promotion',
         component:PromotionComponent
+      },
+      {
+        path:'new-buildings',
+        component:NewBuildingsComponent
+      },
+      {
+        path:'new-promotion',
+        component:NewPromotionComponent
       }
 ];
 
