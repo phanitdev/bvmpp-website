@@ -370,7 +370,7 @@
 .listing-hero__inner, 
 .listing-grid {
   width: 92%;           /* នៅលើអេក្រង់ទូរស័ព្ទតូចៗ វានឹងរំកិលខ្លួនសល់គែមឆ្វេងស្តាំ 4% មើលទៅស្អាត */
-  max-width: 1284px;    /* នៅលើអេក្រង់កុំព្យូទ័រធំ វានឹងទប់ខ្លួនត្រឹម 1200px មិនឱ្យលាតសន្ធឹងខូចរាងឡើយ */
+  max-width: 100%;   /* នៅលើអេក្រង់កុំព្យូទ័រធំ វានឹងទប់ខ្លួនត្រឹម 1200px មិនឱ្យលាតសន្ធឹងខូចរាងឡើយ */
   margin: 0 auto;       /* រុញប្រអប់ឱ្យស្ថិតនៅចំកណ្ដាលអេក្រង់ជានិច្ច */
 }
 
@@ -523,4 +523,160 @@
       }
     }
   }
+}
+
+.listing-hero {
+  padding: 3rem 1.5rem 4rem; /* Increased padding for a more spacious, luxury feel */
+  background: linear-gradient(135deg, #c1dbef 0%, #e7f0f8 100%); /* Adjusted angle for richer depth */
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Responsive Grid System for Promotion Page
+   ========================================================================== */
+
+
+
+@media (max-width: 576px) {
+  .listing-hero__inner {
+    width: 100%;       
+    border-radius: 0;  
+  }
+  
+  .listing-grid {
+    width: 90%;         
+  }
+}
+
+.listing-hero__inner--slider {
+  padding: 0;
+}
+
+/* ==========================================================================
+   2. Main Slider / Hero Panel
+   ========================================================================== */
+.slider-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px; /* Smoother, more modern rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 25px 60px rgba(5, 12, 18, 0.4); 
+  margin-top: 80px;
+}
+
+.slider-stage {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  min-height: 360px;
+  background: #0b151f;
+}
+
+/* Fixes distorted images and adds a clean fade-in */
+.slider-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease; /* Prepares image for smooth interactions */
+}
+
+/* Elegant glassmorphism dark-to-transparent overlay gradient */
+.slider-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 2.5rem; /* More generous breathing room for typography */
+  background: linear-gradient(
+    180deg, 
+    rgba(11, 21, 31, 0) 0%, 
+    rgba(11, 21, 31, 0.6) 50%, 
+    rgba(11, 21, 31, 0.95) 100__
+  );
+  z-index: 1;
+}
+
+.slider-copy {
+  max-width: 760px;
+}
+
+.slider-copy h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.slider-copy p:last-child {
+  margin-top: 1rem;
+  max-width: 620px;
+  line-height: 1.75;
+  color: #c9d6dd; /* Softened text color for premium contrast readability */
+}
+
+/* ==========================================================================
+   3. Slider Interactive Controls
+   ========================================================================== */
+.slider-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-self: flex-end; /* Aligns smoothly with text baseline */
+  margin-bottom: 0.5rem;
+  z-index: 2;
+}
+
+.slider-controls button {
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px); /* Trendy glassmorphism effect */
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.slider-controls button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.slider-dots {
+  position: absolute;
+  left: 2.5rem;
+  bottom: 1.25rem;
+  display: flex;
+  gap: 0.6rem;
+  z-index: 2;
+}
+
+.slider-dots button {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider-dots button:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Expands the width of the active dot for a sleek modern UI approach */
+.slider-dots button.is-active {
+  background: #f0d58a;
+  width: 24px;
+  border-radius: 999px;
 }
