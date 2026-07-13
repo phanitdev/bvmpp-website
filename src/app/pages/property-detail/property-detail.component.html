@@ -1,0 +1,50 @@
+<div class="container" *ngIf="property; else notFoundTemplate">
+  <div class="property-detail-wrapper">
+    
+    <!-- ផ្នែកខាងឆ្វេង៖ រូបភាពវីឡាធំ -->
+    <div class="property-gallery">
+      <img [src]="property.mainImageUrl" [alt]="property.title" class="main-image">
+    </div>
+
+    <!-- ផ្នែកខាងស្តាំ៖ ព័ត៌មានលម្អិត -->
+    <div class="property-info-panel">
+      <span class="status-badge">សម្រាប់លក់</span>
+      <h1 class="property-title">{{ property.title }}</h1>
+      <p class="property-price">{{ property.price }}</p>
+      <p class="property-location">📍 {{ property.location }}</p>
+
+      <!-- ប្លុកលក្ខណៈពិសេស -->
+      <div class="property-specs">
+        <div class="spec-item">
+          <span class="icon">🛏️</span>
+          <span class="value">{{ property.bedrooms }} បន្ទប់គេង</span>
+        </div>
+        <div class="spec-item">
+          <span class="icon">🚿</span>
+          <span class="value">{{ property.bathrooms }} បន្ទប់ទឹក</span>
+        </div>
+        <div class="spec-item">
+          <span class="icon">📐</span>
+          <span class="value">{{ property.sizeSqft }} sqm</span>
+        </div>
+      </div>
+
+      <div class="property-description">
+        <h3>ពិពណ៌នាអំពីផ្ទះ</h3>
+        <p>{{ property.description }}</p>
+      </div>
+
+      <!-- ប៊ូតុងសកម្មភាព -->
+      <button class="btn-contact">សាកសួរព័ត៌មាន / កក់ការទស្សនា</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- 💡 ទម្រង់បង្ហាញពេលស្វែងរក ID មិនឃើញ (ឧទាហរណ៍វាយលេខ ID ខុសលើ URL) -->
+<ng-template #notFoundTemplate>
+  <div class="not-found-container">
+    <h2>⚠️ រកមិនឃើញព័ត៌មានលម្អិតនៃអចលនទ្រព្យនេះទេ!</h2>
+    <p>សូមពិនិត្យមើលម្ដងទៀត ឬត្រឡប់ទៅទំព័រដើមវិញ។</p>
+  </div>
+</ng-template>

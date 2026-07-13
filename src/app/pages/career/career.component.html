@@ -30,11 +30,10 @@
     </div>
   </div>
 </section>
+
 <section class="listing-grid">
-  <!-- 💡 ដំណោះស្រាយ៖ ដាក់ routerLink ផ្ទាល់នៅលើរូបភាពកាតនីមួយៗ ដោយចាប់យក property.id តាម Dynamic -->
-  <article class="listing-card" *ngFor="let property of properties">
-    
-    <div class="image-container" [routerLink]="['/pages/property-detail', property.id || 1]" style="cursor: pointer;">
+  <article class="listing-card" *ngFor="let property of newPromotion">
+    <div class="image-container">
       <img [src]="property.image" [alt]="property.title">
     </div>
     
@@ -44,8 +43,7 @@
         <span>{{ property.size }}</span>
         <span>{{ property.purpose }}</span>
       </div>
-      <!-- 💡 ចុចចំចំណងជើងអក្សរក៏រត់ទៅទំព័រ Detail ដែរ -->
-      <h2 [routerLink]="['/pages/property-detail', property.id || 1]" style="cursor: pointer;">{{ property.title }}</h2>
+      <h2>{{ property.title }}</h2>
       <p>{{ property.description }}</p>
       <a routerLink="/registration">Request details</a>
     </div>

@@ -1,20 +1,367 @@
+.section {
+  padding: 5.5rem 1.5rem;
+}
 
-/* ==========================================================================
-   1. Design Tokens & Core Layout
-   ========================================================================== */
+.section__intro,
+.stats__inner,
+.about__grid,
+.property-grid,
+.location__grid,
+.hero__content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .eyebrow {
-  margin: 0 0 0.75rem;
-  color: #c5973e; /* Premium Gold Accent */
+  margin: 0 0 0.85rem;
+  color: #c5973e;
   text-transform: uppercase;
-  letter-spacing: 0.12em; /* Slightly increased for better breathability */
-  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
   font-weight: 700;
 }
 
-.listing-hero {
-  padding: 3rem 1.5rem 4rem; /* Increased padding for a more spacious, luxury feel */
-  background: linear-gradient(135deg, #0f2130 0%, #193245 100%); /* Adjusted angle for richer depth */
+.section__intro h2,
+.hero h1 {
+  margin: 0;
+  line-height: 1.1;
+  color: #0f1d2a;
+}
+
+.section__intro h2 {
+  max-width: 760px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+
+/* ==========================================================================
+   Hero Section with Shorter Cinematic Background Video
+   ========================================================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  
+  /* បង្រួមកម្ពស់មកត្រឹម 55% នៃអេក្រង់ ដើម្បីឱ្យមើលទៅរាងស្លីមស្អាត */
+  height: 80vh; 
+  
+  /* កម្ពស់ទាបបំផុតដែលមិនអាចឱ្យតូចជាងនេះបាន ដើម្បីការពារកុំឱ្យបាក់អក្សរ */
+  min-height: 420px; 
+  
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #f8fafc;
+
+  &__video-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &__video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* រក្សាសមាមាត្រវីដេអូមិនឱ្យទាញខូចរាង */
+    object-position: center;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+      135deg, 
+      rgba(#0a131c, 0.88) 0%, 
+      rgba(#0f2130, 0.65) 100%
+    ); 
+  }
+
+  &__content {
+    position: relative;
+    z-index: 3; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* បន្ថយ padding ពី 4rem មក 2rem ដើម្បីឱ្យសមស្របនឹងកម្ពស់ថ្មី */
+    padding: 2rem 1.5rem; 
+    
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.7fr);
+    gap: 2rem;
+    align-items: center; /* ប្ដូរពី end មក center ដើម្បីឱ្យអក្សររត់ចំកណ្ដាលកម្ពស់វីដេអូ */
+  }
+
+  h1 {
+    margin: 0;
+    line-height: 1.1;
+    max-width: 720px;
+    font-size: clamp(2.2rem, 4.5vw, 3rem); /* បន្ថយទំហំអក្សរបន្តិចដើម្បីឱ្យសមនឹងប្រអប់តូច */
+    color: #ffffff;
+  }
+
+  &__intro {
+    max-width: 620px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #dfe8ed;
+    margin: 1rem 0 0;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  &__panel {
+    justify-self: end;
+    width: min(100%, 360px);
+    padding: 1.25rem; /* បន្ថយ padding បន្តិច */
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+
+    img {
+      width: 90px; /* បង្រួមរូប Logo តូចបន្តិច */
+      margin-bottom: 0.75rem;
+    }
+
+    &-copy {
+      display: grid;
+      gap: 0.4rem;
+
+      strong {
+        font-size: 1.1rem;
+      }
+
+      span {
+        color: #dfe8ed;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+
+.hero__content {
+  position: relative;
+  width: 100%;
+  padding: 4rem 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.7fr);
+  gap: 2rem;
+  align-items: end;
+}
+
+.hero h1 {
+  max-width: 720px;
+  font-size: clamp(2.6rem, 5vw, 2rem);
   color: #ffffff;
+}
+
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.85rem 1.3rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button--primary {
+  background: linear-gradient(135deg, #d0a449, #f0d58a);
+  color: #17212b;
+}
+
+
+//video//
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 80vh; /* Adjust base banner height threshold */
+
+&__video-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none; 
+  }
+
+  &___video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    
+
+    background: linear-gradient(
+      135deg, 
+      rgba(10, 19, 28, 0.4) 0%, 
+      rgba(15, 33, 48, 0.2) 100%
+    ); 
+    
+    pointer-events: none; 
+
+  }
+
+  // &__content {
+  //   position: relative;
+  //   z-index: 3; /* Places copy text layer cleanly on top of video elements */
+  //   width: 50%;
+  // }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////
+.stats {
+  background:rgb(10 69 108 / 90%);
+  color: #ffffff;
+  padding: 1.4rem 1.5rem;
+}
+
+.stats__inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stat {
+  display: grid;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.stat strong {
+  color: #f0d58a;
+  font-size: 2rem;
+}
+
+.stat span {
+  color: #cfdae1;
+}
+
+.about {
+  background: #f8f4ed;
+}
+
+.about__grid,
+.location__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2.25rem;
+}
+
+.about__copy p,
+.location__panel p {
+  line-height: 1.8;
+  color: #425261;
+  font-size: 1rem;
+}
+
+.about__copy ul,
+.location__panel ul,
+.property__body ul {
+  margin: 1.4rem 0 0;
+  padding-left: 1.1rem;
+  color: #1f2f3d;
+  line-height: 1.8;
+}
+
+.about__media img,
+.property img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.properties {
+  background: #ffffff;
+}
+
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.25rem;
+}
+
+.property {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f9f6f0;
+  border: 1px solid #eadfcb;
+}
+
+.property img {
+  aspect-ratio: 4 / 3;
+}
+
+.property__body {
+  padding: 1.4rem;
+}
+
+.property__body h3,
+.location__panel h3 {
+  margin: 0;
+  color: #132230;
+}
+
+.property__body p {
+  margin: 0.85rem 0 0;
+  color: #52606c;
+  line-height: 1.75;
+}
+
+.location {
+  background: linear-gradient(180deg, #f4efe6 0%, #efe5d6 100%);
+}
+
+.location__panel {
+  padding: 2rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(201, 163, 90, 0.16);
+}
+
+.location__panel--accent {
+  background: #102130;
+  color: #ffffff;
+}
+
+.location__panel--accent h3,
+.location__panel--accent ul {
+  color: #ffffff;
+}
+
+.location__panel--accent .button {
+  margin-top: 1.25rem;
+}
+
+//block Property options for family//
+.listing-grid {
+  padding: 4rem 1.5rem 6rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem; /* Clean grid spacing */
 }
 
 /* ==========================================================================
@@ -22,10 +369,172 @@
    ========================================================================== */
 .listing-hero__inner, 
 .listing-grid {
-  width: 92%;           
-  max-width: 1284px;   
-  margin: 0 auto;       
+  width: 92%;           /* នៅលើអេក្រង់ទូរស័ព្ទតូចៗ វានឹងរំកិលខ្លួនសល់គែមឆ្វេងស្តាំ 4% មើលទៅស្អាត */
+  max-width: 100%;   /* នៅលើអេក្រង់កុំព្យូទ័រធំ វានឹងទប់ខ្លួនត្រឹម 1200px មិនឱ្យលាតសន្ធឹងខូចរាងឡើយ */
+  margin: 0 auto;       /* រុញប្រអប់ឱ្យស្ថិតនៅចំកណ្ដាលអេក្រង់ជានិច្ច */
 }
+
+/* បន្ថែមចំណុច Media Query នេះដើម្បីឱ្យវារត់ពេញគែម (Full Width) ពេលនៅលើទូរស័ព្ទដៃតូចខ្លាំង */
+@media (max-width: 576px) {
+  .listing-hero__inner {
+    width: 100%;        /* សម្រាប់ទូរស័ព្ទដៃតូចៗ ឱ្យស្លាយ (Slider) រត់បុកគែមមើលទៅធំទូលាយ */
+    border-radius: 0;   /* ដកជ្រុងកោងចេញពេលនៅលើទូរស័ព្ទ */
+  }
+  
+  .listing-grid {
+    width: 90%;         /* ឯប្រអប់ Grid ផ្ទះ ទុកគែមបន្តិចដើម្បីកុំឱ្យបុកអក្សរដាច់ */
+  }
+}
+.listing-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 20px rgba(17, 36, 51, 0.04);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+/* Elegant card raise and soft glow on hover */
+.listing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(17, 36, 51, 0.1);
+}
+
+/* Smooth zoom effect inside card image containers on hover */
+.listing-card .image-container {
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+.listing-card:hover img {
+  transform: scale(1.06);
+}
+
+.listing-card__body {
+  padding: 1.75rem;
+}
+
+.listing-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.listing-card__meta span {
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px; /* Matching structural block shapes instead of perfect pills */
+  background: #fdf8ee;
+  color: #9a7423;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.listing-card h2 {
+  margin: 0;
+  color: #112433;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.listing-card p {
+  margin: 0.85rem 0 1.5rem;
+  color: #62727f;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.listing-card a {
+  color: #9a7423;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s ease;
+}
+
+.listing-card a:hover {
+  color: #112433;
+}
+@media (max-width: 960px) {
+  .listing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+
+/* ==========================================================================
+   Hero Content Responsive - បង្រួមទំហំអក្សរលើ Mobile ឱ្យស្អាតសមសួន
+   ========================================================================== */
+
+/* ទម្រង់ធម្មតាលើ Desktop (Screen ធំ) */
+.hero__content {
+  /* រក្សាទុក Styles ធម្មតារបស់អ្នក (ឧទាហរណ៍៖ padding, alignment...) */
+  
+  h1, .hero-title {
+    font-size: 3.5rem; /* ទំហំធំធម្មតាលើ Desktop */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  p, .hero-description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+}
+
+/* 💡 ផ្នែក Responsive Breakpoint: កែសម្រួលពេលមើលលើអេក្រង់ទូរស័ព្ទដៃ */
+@media (max-width: 992px) {
+  .hero__content {
+    /* បន្ថយ Padding ខាងឆ្វេងសងខាងបន្តិចលើ Mobile ដើម្បីកុំឱ្យអក្សរបុកគែមអេក្រង់ */
+    padding: 0 1.5rem !important; 
+    
+    /* 🌟 បង្រួមអក្សរចំណងជើងធំ "Professional real estate living..." ឱ្យតូចល្មមស្អាត */
+    h1, .hero-title {
+      font-size: 1.85rem !important;      /* បង្រួមពីធំមកសល់ទំហំសមល្មមអានលើ Mobile */
+      line-height: 1.3 !important;
+      margin-bottom: 1rem !important;
+      letter-spacing: -0.01em;
+    }
+
+    /* 🌟 បង្រួមអក្សរពណ៌សរៀបរាប់ខាងក្រោម "Explore a residential community..." */
+    p, .hero-description {
+      font-size: 0.9rem !important;       /* បង្រួមតូចស្លីមងាយស្រួលអាន និងមិនបាំងមុខមនុស្សក្នុងវីដេអូ */
+      line-height: 1.5 !important;
+      margin-bottom: 1.5rem !important;
+      opacity: 0.85;                      /* បន្ថយភាពច្បាស់ស្រាលៗដើម្បីឱ្យមើលទៅ Premium */
+    }
+
+    /* 💡 បង្រួមទំហំប៊ូតុងទាំងពីរ (View Properties & Register) ឱ្យសមាមាត្រនឹងអក្សរតូច */
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;             /* តម្រៀបប៊ូតុងចុះក្រោមលើ Mobile ដើម្បីកុំឱ្យបុកគ្នាផ្ដេក */
+      gap: 0.75rem;
+      
+      .btn {
+        width: 100%;                      /* ឱ្យប៊ូតុងលាតពេញទទឹងស្មើគ្នា */
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.9rem !important;
+      }
+    }
+  }
+}
+
+.listing-hero {
+  padding: 3rem 1.5rem 4rem; /* Increased padding for a more spacious, luxury feel */
+  background: linear-gradient(135deg, #c1dbef 0%, #e7f0f8 100%); /* Adjusted angle for richer depth */
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Responsive Grid System for Promotion Page
+   ========================================================================== */
+
 
 
 @media (max-width: 576px) {
@@ -170,240 +679,4 @@
   background: #f0d58a;
   width: 24px;
   border-radius: 999px;
-}
-
-/* ==========================================================================
-   4. Listing Cards Grid Section
-   ========================================================================== */
-.listing-grid {
-  padding: 4rem 1.5rem 6rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem; /* Clean grid spacing */
-}
-
-.listing-card {
-  border-radius: 12px;
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid #eaeaea;
-  box-shadow: 0 4px 20px rgba(17, 36, 51, 0.04);
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
-}
-
-/* Elegant card raise and soft glow on hover */
-.listing-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 35px rgba(17, 36, 51, 0.1);
-}
-
-/* Smooth zoom effect inside card image containers on hover */
-.listing-card .image-container {
-  overflow: hidden;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-}
-
-.listing-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.listing-card:hover img {
-  transform: scale(1.06);
-}
-
-.listing-card__body {
-  padding: 1.75rem;
-}
-
-.listing-card__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.listing-card__meta span {
-  padding: 0.35rem 0.85rem;
-  border-radius: 6px; /* Matching structural block shapes instead of perfect pills */
-  background: #fdf8ee;
-  color: #9a7423;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-
-.listing-card h2 {
-  margin: 0;
-  color: #112433;
-  font-size: 1.45rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.listing-card p {
-  margin: 0.85rem 0 1.5rem;
-  color: #62727f;
-  font-size: 0.95rem;
-  line-height: 1.65;
-}
-
-.listing-card a {
-  color: #9a7423;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.95rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  transition: color 0.2s ease;
-}
-
-.listing-card a:hover {
-  color: #112433;
-}
-
-/* ==========================================================================
-   5. Responsive / Mobile First Layout Adaptations
-   ========================================================================== */
-@media (max-width: 960px) {
-  .listing-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 680px) {
-  .slider-stage {
-    aspect-ratio: auto;
-    min-height: 400px;
-  }
-
-  .slider-overlay {
-    padding: 2rem 1.5rem;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-end;
-    gap: 1.5rem;
-  }
-
-  .slider-controls {
-    align-self: flex-start;
-  }
-
-  .slider-dots {
-    left: 1.5rem;
-  }
-
-  .listing-grid {
-    grid-template-columns: 1fr;
-    padding-top: 2rem;
-  }
-}
-
-/* ==========================================================================
-   5. Responsive / Mobile First Layout Adaptations (Updated for 2 Columns)
-   ========================================================================== */
-
-/* សម្រាប់អេក្រង់ Tablet ឬ Medium Screens */
-@media (max-width: 960px) {
-  .listing-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 1.5rem;
-  }
-}
-
-/* សម្រាប់អេក្រង់ទូរស័ព្ទដៃ (Mobile Screen - Fixes for 2 Columns Side-by-Side) */
-@media (max-width: 680px) {
-  .listing-hero {
-    padding: 1.5rem 0.75rem 2.5rem !important;
-  }
-
-  .slider-stage {
-    aspect-ratio: auto;
-    min-height: 260px;
-  }
-
-  .slider-overlay {
-    padding: 1.25rem 1rem !important;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-end;
-    gap: 0.75rem;
-  }
-
-  .slider-copy h1 {
-    font-size: 1.35rem !important;
-    line-height: 1.25 !important;
-  }
-
-  .slider-copy p:last-child {
-    font-size: 0.8rem !important;
-    line-height: 1.45 !important;
-    margin-top: 0.35rem !important;
-  }
-
-  .slider-controls button {
-    width: 38px !important;
-    height: 38px !important;
-    font-size: 1rem !important;
-  }
-
-  /* 🌟 ចំណុចគន្លឹះ៖ ប្តូរមកជា ២ ជួរទន្ទឹមគ្នានៅលើទូរស័ព្ទដៃ */
-  .listing-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* បង្ហាញ ២ កាតទន្ទឹមគ្នា */
-    padding: 1.5rem 0.5rem 3rem !important;
-    gap: 0.75rem !important; /* បន្ថយគម្លាតចន្លោះកាត ដើម្បីកុំឱ្យរុញគ្នាខ្លាំង */
-    width: 96% !important;   /* ពង្រីក Grid ឱ្យលាតជិតដល់គែមអេក្រង់ */
-  }
-  
-  /* 💡 បង្រួមអក្សរ និង Padding ក្នុង Card នីមួយៗឱ្យសមនឹង ២ ជួរ */
-  .listing-card {
-    border-radius: 8px !important; /* បន្ថយភាពមូលគែមបន្តិចឱ្យមើលទៅស្លីម */
-    
-    .listing-card__body {
-      padding: 0.85rem !important; /* បន្ថយគម្លាតខាងក្នុងកាត ដើម្បីទុកកន្លែងឱ្យអក្សរ */
-    }
-
-    .listing-card__meta {
-      gap: 0.25rem !important;
-      margin-bottom: 0.5rem !important;
-      
-      span {
-        padding: 0.2rem 0.4rem !important; /* បង្រួម Tag ព័ត៌មាន (Villa, ទំហំ) ឱ្យតូច */
-        font-size: 0.65rem !important;
-        letter-spacing: 0;
-      }
-    }
-
-    h2 {
-      font-size: 1rem !important; /* បង្រួមចំណងជើងផ្ទះ (เช่น Luxury Villa) ឱ្យសមល្មម ២ ជួរ */
-      line-height: 1.2 !important;
-    }
-    
-    p {
-      font-size: 0.78rem !important; /* បង្រួមអក្សររៀបរាប់ */
-      line-height: 1.4 !important;
-      margin: 0.5rem 0 1rem !important;
-    }
-
-    a {
-      font-size: 0.82rem !important; /* បង្រួមប៊ូតុង Request details */
-    }
-  }
-}
-
-/* សម្រាប់អេក្រង់ទូរស័ព្ទតូចបំផុត */
-@media (max-width: 420px) {
-  .listing-grid {
-    gap: 0.5rem !important; /* កាន់តែតូច គម្លាតកាន់តែជិតគ្នា ដើម្បីកុំឱ្យធ្លាក់ជួរ */
-    padding: 1.5rem 0.25rem 3rem !important;
-  }
-  
-  .listing-card h2 {
-    font-size: 0.9rem !important;
-  }
 }

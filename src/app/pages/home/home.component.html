@@ -41,6 +41,10 @@
           <h1>{{ currentSlide.title }}</h1>
           <p>{{ currentSlide.description }}</p>
         </div>
+        <div class="hero__actions">
+            <a routerLink="/property-list" class="button button--primary">View Properties</a>
+            <a routerLink="/registration" class="button button--primary">Register Interest</a>
+        </div>
 
         <div class="slider-controls">
           <button type="button" (click)="previousSlide()" aria-label="Previous slide">&#8249;</button>

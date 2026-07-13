@@ -54,6 +54,7 @@ export class PropertyListComponent implements OnInit, OnDestroy {
 
   readonly properties = [
     {
+      id:1,
       title: 'Luxury Villa Collection',
       image: 'assets/images/borey-vimean-bg.jpg',
       type: 'Villa',
@@ -62,6 +63,7 @@ export class PropertyListComponent implements OnInit, OnDestroy {
       description: 'Signature villas with generous floor area, elegant facades, and a layout that supports premium family living.'
     },
     {
+      id:2,
       title: 'Modern Urban Residence',
       image: 'assets/images/property_list1.jpg',
       type: 'Residence',
@@ -70,6 +72,7 @@ export class PropertyListComponent implements OnInit, OnDestroy {
       description: 'A balanced choice for buyers who want a contemporary home with practical room flow and clean curb appeal.'
     },
     {
+      id:3,
       title: 'Commercial Shophouse',
       image: 'assets/images/house3.jpg',
       type: 'Shophouse',
@@ -78,6 +81,7 @@ export class PropertyListComponent implements OnInit, OnDestroy {
       description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
     },
     {
+      id:4,
       title: 'Commercial Shophouse',
       image: 'assets/images/property_list.jpg',
       type: 'Shophouse',
@@ -86,6 +90,7 @@ export class PropertyListComponent implements OnInit, OnDestroy {
       description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
     },
     {
+      id:5,
       title: 'Commercial Shophouse',
       image: 'assets/images/property_list2.jpg',
       type: 'Shophouse',
@@ -93,7 +98,8 @@ export class PropertyListComponent implements OnInit, OnDestroy {
       purpose: 'Retail and investment',
       description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
     },
-        {
+    {
+      id:6,
       title: 'Commercial Shophouse',
       image: 'assets/images/property_list3.jpg',
       type: 'Shophouse',
@@ -101,7 +107,7 @@ export class PropertyListComponent implements OnInit, OnDestroy {
       purpose: 'Retail and investment',
       description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
     },
-        {
+    { id:7,
       title: 'Commercial Shophouse',
       image: 'assets/images/property_list4.jpg',
       type: 'Shophouse',
@@ -109,7 +115,8 @@ export class PropertyListComponent implements OnInit, OnDestroy {
       purpose: 'Retail and investment',
       description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
     },
-        {
+    {
+      id:8,
       title: 'Commercial Shophouse',
       image: 'assets/images/property_list5.jpg',
       type: 'Shophouse',
@@ -117,7 +124,8 @@ export class PropertyListComponent implements OnInit, OnDestroy {
       purpose: 'Retail and investment',
       description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
     },
-        {
+    {
+      id:9,
       title: 'Commercial Shophouse',
       image: 'assets/images/property_list6.jpg',
       type: 'Shophouse',
@@ -125,7 +133,8 @@ export class PropertyListComponent implements OnInit, OnDestroy {
       purpose: 'Retail and investment',
       description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
     },
-        {
+    {
+      id:10,
       title: 'Commercial Shophouse',
       image: 'assets/images/property_list7.jpg',
       type: 'Shophouse',
@@ -133,7 +142,8 @@ export class PropertyListComponent implements OnInit, OnDestroy {
       purpose: 'Retail and investment',
       description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
     },
-        {
+    {
+      id:11,
       title: 'Commercial Shophouse',
       image: 'assets/images/property_list8.jpg',
       type: 'Shophouse',
@@ -141,7 +151,8 @@ export class PropertyListComponent implements OnInit, OnDestroy {
       purpose: 'Retail and investment',
       description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
     },
-            {
+    {
+      id:12,
       title: 'Commercial Shophouse',
       image: 'assets/images/property_list9.jpg',
       type: 'Shophouse',

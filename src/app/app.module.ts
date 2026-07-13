@@ -12,6 +12,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { PromotionComponent } from './pages/promotion/promotion.component';
 import { NewBuildingsComponent } from './pages/new-buildings/new-buildings.component';
 import { NewPromotionComponent } from './pages/new-promotion/new-promotion.component';
+import { PropertyDetailComponent } from './pages/property-detail/property-detail.component';
+import { CareerComponent } from './pages/career/career.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { NewPromotionComponent } from './pages/new-promotion/new-promotion.compo
     HomeComponent,
     PromotionComponent,
     NewBuildingsComponent,
-    NewPromotionComponent
+    NewPromotionComponent,
+    PropertyDetailComponent,
+    CareerComponent
 
   ],
   imports: [

@@ -7,6 +7,9 @@ import { PropertyListComponent } from './pages/property-list/property-list.compo
 import { PromotionComponent } from './pages/promotion/promotion.component';
 import { NewBuildingsComponent } from './pages/new-buildings/new-buildings.component';
 import { NewPromotionComponent } from './pages/new-promotion/new-promotion.component';
+import { CareerComponent } from './pages/career/career.component';
+import { PropertyDetailComponent } from './pages/property-detail/property-detail.component';
+
 
 const routes: Routes = [
       {
@@ -41,7 +44,13 @@ const routes: Routes = [
       {
         path:'new-promotion',
         component:NewPromotionComponent
-      }
+      },
+      {
+        path: 'career',
+        component: CareerComponent
+      },
+      { path: 'pages/property-detail/:id', component: PropertyDetailComponent }
+
 ];
 
 @NgModule({
