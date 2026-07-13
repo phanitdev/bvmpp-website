@@ -680,3 +680,52 @@
   width: 24px;
   border-radius: 999px;
 }
+
+
+.image-container {
+  position: relative; // ចាំបាច់ត្រូវមាន ដើម្បីឱ្យប៊ូតុងបេះដូងរត់លើរូបភាពបាន
+
+  .btn-favorite {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    font-size: 1.1rem;
+
+    &:hover {
+      transform: scale(1.1);
+      background: #ffffff;
+    }
+  }
+}
+
+.listing-card__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 8px;
+
+  h2 {
+    margin: 0; // លុប margin ចាស់ចេញ ដើម្បីឱ្យវាស្មើជួរជាមួយផ្កាយ
+  }
+
+  .listing-card__rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: bold;
+    color: #dfa117; // ពណ៌មាស
+    font-size: 0.95rem;
+  }
+}

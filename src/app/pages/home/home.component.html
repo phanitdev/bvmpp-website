@@ -106,6 +106,12 @@
   <article class="listing-card" *ngFor="let property of propertyTypes">
     <div class="image-container">
       <img [src]="property.image" [alt]="property.title">
+      
+      <!-- ប៊ូតុងបេះដូងលេចនៅលើរូបភាព (Favorite Button) -->
+      <button class="btn-favorite" (click)="property.isFavorite = !property.isFavorite" type="button">
+        <!-- ប្រើ Unicode (❤️/🤍) ឬដូរទៅប្រើ Bootstrap Icons / Font Awesome ក៏បាន -->
+        <span>{{ property.isFavorite ? '❤️' : '🤍' }}</span>
+      </button>
     </div>
     
     <div class="listing-card__body">
@@ -114,7 +120,16 @@
         <span>{{ property.size }}</span>
         <span>{{ property.purpose }}</span>
       </div>
-      <h2>{{ property.title }}</h2>
+      
+      <!-- ជួរចំណងជើង និងផ្កាយ (Title & Rating Row) -->
+      <div class="listing-card__title-row">
+        <h2>{{ property.title }}</h2>
+        <div class="listing-card__rating" *ngIf="property.rating">
+          <span class="star-icon">⭐</span>
+          <span class="rating-value">{{ property.rating }}</span>
+        </div>
+      </div>
+      
       <p>{{ property.description }}</p>
       <a routerLink="/registration">Request details</a>
     </div>

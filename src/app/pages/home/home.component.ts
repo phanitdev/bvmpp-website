@@ -84,7 +84,9 @@ export class HomeComponent implements OnInit {
       type: 'Villa',
       size: '320-480 sqm',
       purpose: 'Family ownership',
-      description: 'Signature villas with generous floor area, elegant facades, and a layout that supports premium family living.'
+      description: 'Signature villas with generous floor area, elegant facades, and a layout that supports premium family living.',
+      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true
     },
     {
       title: 'Modern Urban Residence',
@@ -92,7 +94,9 @@ export class HomeComponent implements OnInit {
       type: 'Residence',
       size: '220-300 sqm',
       purpose: 'Primary home',
-      description: 'A balanced choice for buyers who want a contemporary home with practical room flow and clean curb appeal.'
+      description: 'A balanced choice for buyers who want a contemporary home with practical room flow and clean curb appeal.',
+      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true
     },
     {
       title: 'Commercial Shophouse',
@@ -100,7 +104,9 @@ export class HomeComponent implements OnInit {
       type: 'Shophouse',
       size: '180-260 sqm',
       purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.',
+      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true
     },
     {
       title: 'Commercial Shophouse',
@@ -108,7 +114,9 @@ export class HomeComponent implements OnInit {
       type: 'Shophouse',
       size: '180-260 sqm',
       purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.',
+      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true
     },
     {
       title: 'Commercial Shophouse',
@@ -116,7 +124,9 @@ export class HomeComponent implements OnInit {
       type: 'Shophouse',
       size: '180-260 sqm',
       purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.',
+      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true
     },
         {
       title: 'Commercial Shophouse',
@@ -124,7 +134,9 @@ export class HomeComponent implements OnInit {
       type: 'Shophouse',
       size: '180-260 sqm',
       purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.',
+      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true
     },
         {
       title: 'Commercial Shophouse',
@@ -132,7 +144,9 @@ export class HomeComponent implements OnInit {
       type: 'Shophouse',
       size: '180-260 sqm',
       purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.',
+      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true
     },
         {
       title: 'Commercial Shophouse',
@@ -140,7 +154,9 @@ export class HomeComponent implements OnInit {
       type: 'Shophouse',
       size: '180-260 sqm',
       purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.',
+      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true
     },
         {
       title: 'Commercial Shophouse',
@@ -148,7 +164,11 @@ export class HomeComponent implements OnInit {
       type: 'Shophouse',
       size: '180-260 sqm',
       purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.',
+       rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true  
+          
+    
     },
         {
       title: 'Commercial Shophouse',
@@ -156,7 +176,9 @@ export class HomeComponent implements OnInit {
       type: 'Shophouse',
       size: '180-260 sqm',
       purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.',
+      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true
     },
         {
       title: 'Commercial Shophouse',
@@ -164,7 +186,9 @@ export class HomeComponent implements OnInit {
       type: 'Shophouse',
       size: '180-260 sqm',
       purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.',
+      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true
     },
             {
       title: 'Commercial Shophouse',
@@ -172,7 +196,9 @@ export class HomeComponent implements OnInit {
       type: 'Shophouse',
       size: '180-260 sqm',
       purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.',
+      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      isFavorite: true
     }
   ];
 
