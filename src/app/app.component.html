@@ -18,15 +18,52 @@
     </button>
 
     <div class="nav-links" [class.show]="isMenuOpen">
-      <a [routerLink]="['/home']" routerLinkActive="cta-link" (click)="isMenuOpen = false">About</a>
-      <a routerLink="/property-list" routerLinkActive="cta-link" (click)="isMenuOpen = false">Properties</a>
-      <a routerLink="/new-buildings" routerLinkActive="cta-link" (click)="isMenuOpen = false">New Buildings</a>
-      <!-- <a routerLink="/promotion" routerLinkActive="cta-link" (click)="isMenuOpen = false">Promotion</a>
-      <a [routerLink]="['/home']" routerLinkActive="cta-link" (click)="isMenuOpen = false">Location</a> -->
-      <a routerLink="/new-promotion" routerLinkActive="cta-link" (click)="isMenuOpen = false">New-Promotion</a> 
-      <a [routerLink]="['/career']" routerLinkActive="cta-link" (click)="isMenuOpen = false">Career</a>   
+      <!-- ⚡ ប្តូរអក្សរ Menu ទៅតាមភាសាដែលបានជ្រើសរើស ⚡ -->
+      <a [routerLink]="['/home']" routerLinkActive="cta-link" (click)="isMenuOpen = false">
+        {{ langService.translate('nav.about') }}
+      </a>
+      <a routerLink="/property-list" routerLinkActive="cta-link" (click)="isMenuOpen = false">
+        {{ langService.translate('nav.properties') }}
+      </a>
+      <a routerLink="/new-buildings" routerLinkActive="cta-link" (click)="isMenuOpen = false">
+        {{ langService.translate('nav.newBuildings') }}
+      </a>
+      <a routerLink="/new-promotion" routerLinkActive="cta-link" (click)="isMenuOpen = false">
+        {{ langService.translate('nav.newPromotion') }}
+      </a> 
+      <a [routerLink]="['/career']" routerLinkActive="cta-link" (click)="isMenuOpen = false">
+        {{ langService.translate('nav.career') }}
+      </a>   
 
-      <a routerLink="/registration" class="cta-link" (click)="isMenuOpen = false">Book a Visit</a>
+      <a routerLink="/registration" class="cta-link" (click)="isMenuOpen = false">
+        {{ langService.translate('nav.bookVisit') }}
+      </a>
+
+      <!-- Dropdown ប្តូរភាសា -->
+      <div class="lang-dropdown" [class.open]="isLangOpen">
+        <button class="lang-dropdown__btn" type="button" (click)="toggleLangDropdown($event)">
+          <ng-container *ngIf="langService.currentLang() === 'en'">
+            <img src="assets/images/en.png" alt="English">
+            <span>ENGLISH</span>
+          </ng-container>
+          <ng-container *ngIf="langService.currentLang() === 'km'">
+            <img src="assets/images/kh.png" alt="Khmer">
+            <span>ភាសាខ្មែរ</span>
+          </ng-container>
+          <span class="arrow-down">▼</span>
+        </button>
+
+        <div class="lang-dropdown__menu">
+          <button type="button" (click)="onLanguageChange('en')">
+            <img src="assets/images/en.png" alt="English">
+            <span>ENGLISH</span>
+          </button>
+          <button type="button" (click)="onLanguageChange('km')">
+            <img src="assets/images/kh.png" alt="Khmer">
+            <span>ភាសាខ្មែរ</span>
+          </button>
+        </div>
+      </div>
    
     </div>
   </nav>

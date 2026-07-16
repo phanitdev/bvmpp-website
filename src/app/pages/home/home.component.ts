@@ -85,7 +85,7 @@ export class HomeComponent implements OnInit {
       size: '320-480 sqm',
       purpose: 'Family ownership',
       description: 'Signature villas with generous floor area, elegant facades, and a layout that supports premium family living.',
-      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      rating: 5,          
       isFavorite: true
     },
     {
@@ -95,7 +95,7 @@ export class HomeComponent implements OnInit {
       size: '220-300 sqm',
       purpose: 'Primary home',
       description: 'A balanced choice for buyers who want a contemporary home with practical room flow and clean curb appeal.',
-      rating: 5,           // ចំនួនផ្កាយ (ឧទាហរណ៍៖ 5 ផ្កាយ)
+      rating: 5,           
       isFavorite: true
     },
     {

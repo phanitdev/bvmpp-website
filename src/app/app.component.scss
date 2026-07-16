@@ -291,3 +291,165 @@
     }
   }
 }
+
+.lang-selector-wrapper {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 15px; // គម្លាតពីប៊ូតុង Book a Visit
+}
+
+.lang-select {
+  background-color: #1a446c; // ពណ៌ខៀវដិតដូច Navbar
+  color: #ffffff;
+  border: 1px solid #dfa117; // ស៊ុមពណ៌មាសប្រណីត
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  height: 36px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #24588a;
+    border-color: #ffffff;
+  }
+
+  option {
+    background-color: #1a446c; // ពណ៌ Background នៃប្រអប់ជម្រើសខាងក្នុង
+    color: #ffffff;
+    padding: 10px;
+  }
+}
+
+// ជំនួយបន្ថែម៖ សម្រាប់ Layout លើទូរស័ព្ទ (Responsive)
+@media (max-width: 768px) {
+  .lang-selector-wrapper {
+    margin-left: 0;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .lang-select {
+    width: 100%;
+    text-align: center;
+
+  }
+}
+
+.lang-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 15px;
+  vertical-align: middle;
+
+  &__btn {
+    background-color: #1a446c;
+    color: #ffffff;
+    border: 1px solid #dfa117;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+
+    // ⚡ បន្ថែម CSS នេះដើម្បីឱ្យរូបទង់ជាតិលើប៊ូតុងដើមចេញមកស្អាតប៉ុនគ្នា
+    img {
+      width: 20px;
+      height: 14px;
+      object-fit: cover;
+      border-radius: 1px;
+    }
+
+    .arrow-down {
+      font-size: 9px;
+      color: #dfa117;
+      margin-left: 4px;
+    }
+  }
+
+  &__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1a446c;
+    border: 1px solid #dfa117;
+    min-width: 130px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 4px;
+    z-index: 9999;
+
+    button {
+      background: none;
+      border: none;
+      color: #ffffff;
+      padding: 10px 12px;
+      width: 100%;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+
+      img {
+        width: 20px;
+        height: 14px;
+        object-fit: cover;
+        border-radius: 1px;
+      }
+
+      &:hover {
+        background-color: #dfa117;
+        color: #1a446c;
+      }
+    }
+  }
+
+  &.open {
+    .lang-dropdown__menu {
+      display: block;
+    }
+  }
+}
+.navbar {
+  // ធានាថាគ្រប់ Menu ទាំងអស់នៅលើ Navbar ស្ថិតនៅចំកណ្តាលជួរដេកស្មើគ្នា
+  display: flex;
+  align-items: center; 
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px; // គម្លាតរវាង Menu នីមួយៗ
+
+  a {
+    font-family: 'Battambang', 'Khmer OS Battambang', sans-serif;
+    font-size: 14px; // ទំហំល្មមមើលច្បាស់ល្អសម្រាប់អក្សរខ្មែរ
+    font-weight: 400;
+    line-height: 1.5; // បន្ថែមគម្លាតបន្ទាត់តិចៗកុំឱ្យទើសជើងអក្សរ
+    text-decoration: none;
+    vertical-align: middle;
+  }
+}
+
+// ស្ទីលសម្រាប់ប៊ូតុង Dropdown ភាសា
+.lang-dropdown__btn {
+  font-family: 'Battambang', 'Khmer OS Battambang', sans-serif;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  
+  span {
+    line-height: 1; // ឱ្យអក្សរនៅក្នុងប៊ូតុងរត់ចំកណ្តាលធៀបនឹងរូបទង់ជាតិ
+  }
+}

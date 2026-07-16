@@ -27,3 +27,19 @@ select,
 textarea {
   font: inherit;
 }
+
+// 1. ទាញយក Font Khmer OS Battambang (Battambang) ពី Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap');
+
+// 2. កំណត់ឱ្យគ្រប់ទំព័រទាំងអស់ប្រើប្រាស់ Font នេះជាលំនាំដើម
+body {
+  font-family: 'Battambang', 'Khmer OS Battambang', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 3. ជំនួយបន្ថែម៖ សម្រាប់ចំណងជើងធំៗ (Headings) ឱ្យចេញមកក្រាស់ស្អាត
+h1, h2, h3, h4, h5, h6, strong {
+  font-family: 'Battambang', 'Khmer OS Battambang', sans-serif;
+  font-weight: 700; // កម្រាស់អក្សរដិត
+}
