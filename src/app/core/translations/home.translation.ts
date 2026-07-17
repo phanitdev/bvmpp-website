@@ -1,8 +1,96 @@
 export const homeTranslations = {
-  // ស្លាយ (Slides)
+  // ==========================================
+  // ⚡ ១. ផ្នែកស្លាយ (Slideshow)
+  // ==========================================
   'slide09.title': { en: 'Festive community highlights', km: 'ទិដ្ឋភាពដ៏រស់រវើកនៃសហគមន៍' },
   'slide09.desc': { en: 'Celebrate project updates, community moments, and seasonal promotions across Borey Vimean Phnom Penh.', km: 'អបអរសាទរការធ្វើបច្ចុប្បន្នភាពគម្រោង និងការផ្តល់ជូនពិសេសផ្សេងៗនៅ បុរី វិមានភ្នំពេញ។' },
-  // ស្ថិតិ (Stats)
+  
+  'slide10.title': { en: 'North Land commercial showcase', km: 'តំបន់ពាណិជ្ជកម្មណតឡែន' },
+  'slide10.desc': { en: 'Featured commercial building presentation with polished architecture and project identity.', km: 'ការបង្ហាញអគារពាណិជ្ជកម្មដ៏លេចធ្លោ ជាមួយរចនាបថស្ថាបត្យកម្មដ៏ប្រណិត និងស៊ីវិល័យបំផុត។' },
+  
+  'slide11.title': { en: 'Special event announcement', km: 'ការប្រកាសព្រឹត្តិការណ៍ពិសេស' },
+  'slide11.desc': { en: 'Promotional and ceremonial campaign artwork presented as part of the property showcase.', km: 'ផ្ទាំងផ្សព្វផ្សាយយុទ្ធនាការពិសេស និងកម្មវិធីសម្ពោធនានានៅក្នុងគម្រោងអចលនទ្រព្យ។' },
+  
+  'slide12.title': { en: 'Customer appreciation feature', km: 'កម្មវិធីថ្លែងអំណរគុណអតិថិជន' },
+  'slide12.desc': { en: 'A branded event slide highlighting project engagement and important dates.', km: 'កម្មវិធីជួបជុំបង្កើតភាពស្និទ្ធស្នាលជាមួយអតិថិជន និងការរំលឹកកាលបរិច្ឆេទសំខាន់ៗរបស់បុរី។' },
+  
+  'slide05.title': { en: 'Project promotion campaign', km: 'យុទ្ធនាការប្រូម៉ូសិនពិសេស' },
+  'slide05.desc': { en: 'Marketing artwork featuring current project offers, rewards, and featured property collections.', km: 'ព័ត៌មានប្រូម៉ូសិនចុងក្រោយបង្អស់ ការផ្តល់រង្វាន់ និងការបង្ហាញប្រភេទផ្ទះពិសេសៗក្នុងគម្រោង។' },
+  
+  'slide06.title': { en: 'Commercial boulevard view', km: 'ទិដ្ឋភាពមហាវិថីពាណិជ្ជកម្ម' },
+  'slide06.desc': { en: 'North Land shophouse and commercial building frontage along the main project road.', km: 'ទិដ្ឋភាពផ្ទះអាជីវកម្ម (Shophouse) និងអគារពាណិជ្ជកម្មជាប់ផ្លូវមេធំទូលាយក្នុងតំបន់ណតឡែន។' },
+  
+  'slide07.title': { en: 'Completed shophouse perspective', km: 'ទិដ្ឋភាពជាក់ស្តែងនៃផ្ទះអាជីវកម្ម' },
+  'slide07.desc': { en: 'Street-level view of finished commercial rows and the walkable business environment.', km: 'ទិដ្ឋភាពផ្ទាល់ពីផ្លូវថ្នល់នៃតំបន់អាជីវកម្មដែលបានសាងសង់រួចរាល់ ងាយស្រួលសម្រាប់ការរស់នៅ និងប្រកបរបររកស៊ី។' },
+  
+  'slide08.title': { en: 'Ruby Villa feature', km: 'វីឡា ឃ្វីន រូប៊ី' },
+  'slide08.desc': { en: 'A featured residential villa poster showing one of the premium home styles in the development.', km: 'ផ្ទាំងបង្ហាញប្រភេទវីឡាដ៏ប្រណិត និងទាន់សម័យបំផុត ដែលជាជម្រើសលំនៅឋានកម្រិតខ្ពស់ក្នុងបុរី។' },
+
+  // ==========================================
+  // ⚡ ២. ផ្នែកទិន្នន័យស្ថិតិ (Stats)
+  // ==========================================
   'stats.years': { en: 'Years of community development', km: 'ឆ្នាំនៃការអភិវឌ្ឍសហគមន៍' },
   'stats.families': { en: 'Families living with confidence', km: 'គ្រួសាររស់នៅដោយភាពជឿជាក់ និងកក់ក្តៅ' },
+  'stats.security': { en: 'Security and gated access', km: 'សន្តិសុខយាមកាម និងច្រកទ្វារសុវត្ថិភាព ២៤ម៉ោង' },
+
+  // ==========================================
+  // ⚡ ៣. ផ្នែកចំណុចលេចធ្លោ (Highlights)
+  // ==========================================
+  'hl.1': { en: 'Elegant villa and modern shophouse options', km: 'ជម្រើសវីឡាដ៏ប្រណិត និងផ្ទះអាជីវកម្មដ៏ទាន់សម័យ' },
+  'hl.2': { en: 'Wide roads, landscaped parks, and family recreation space', km: 'ផ្លូវធំទូលាយ សួនច្បារធម្មជាតិ និងកន្លែងកម្សាន្តសម្រាប់គ្រួសារ' },
+  'hl.3': { en: 'Fast access to schools, retail, and main city routes', km: 'ធ្វើដំណើររហ័សទៅកាន់សាលារៀន ផ្សារទំនើប និងផ្លូវធំៗក្នុងក្រុង' },
+  'hl.4': { en: 'Trusted sales support from consultation to handover', km: 'សេវាកម្មប្រឹក្សាយោបល់ និងលក់ប្រកបដោយទំនុកចិត្ត រហូតដល់ការប្រគល់សោរ' },
+
+  // ==========================================
+  // ⚡ ៤. ផ្នែកប្រភេទលំនៅឋាន (Property Types)
+  // ==========================================
+  // Luxury Villa Collection
+  'prop.luxuryTitle': { en: 'Luxury Villa Collection', km: 'បណ្តុំវីឡាប្រណិតកម្រិតខ្ពស់' },
+  'prop.luxuryType': { en: 'Villa', km: 'វីឡា' },
+  'prop.luxuryPurpose': { en: 'Family ownership', km: 'សម្រាប់លំនៅឋានគ្រួសារ' },
+  'prop.luxuryDesc': { en: 'Signature villas with generous floor area, elegant facades, and a layout that supports premium family living.', km: 'វីឡាដែលមានទំហំដីធំទូលាយ រចនាបថខាងក្រៅដ៏ប្រណិត និងប្លង់ក្នុងផ្ទះដែលគាំទ្រដល់ការរស់នៅលំដាប់ខ្ពស់។' },
+
+  // Modern Urban Residence
+  'prop.modernTitle': { en: 'Modern Urban Residence', km: 'លំនៅឋានបែបសម័យថ្មី' },
+  'prop.modernType': { en: 'Residence', km: 'លំនៅឋាន' },
+  'prop.modernPurpose': { en: 'Primary home', km: 'ផ្ទះដំបូងសម្រាប់គ្រួសារ' },
+  'prop.modernDesc': { en: 'A balanced choice for buyers who want a contemporary home with practical room flow and clean curb appeal.', km: 'ជម្រើសដ៏ល្អឥតខ្ចោះសម្រាប់អ្នកចង់បានផ្ទះបែបសម័យទំនើប មានផាសុកភាព និងទាក់ទាញភ្នែក។' },
+
+  // Commercial Shophouse
+  'prop.shopTitle': { en: 'Commercial Shophouse', km: 'ផ្ទះអាជីវកម្ម (Shophouse)' },
+  'prop.shopType': { en: 'Shophouse', km: 'ផ្ទះអាជីវកម្ម' },
+  'prop.shopPurpose': { en: 'Retail and investment', km: 'សម្រាប់បើកហាង និងវិនិយោគ' },
+  'prop.shopDesc': { en: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.', km: 'សាងសង់ឡើងសម្រាប់ការបើកហាងលក់ដូរ ធ្វើជាការិយាល័យ ឬជួលត្រឡប់មកវិញក្នុងតំបន់សហគមន៍អ៊ូអរស្រាប់។' },
+
+   'hero.eyebrow': { en: 'Property showcase', km: 'ការបង្ហាញអចលនទ្រព្យ' },
+  'btn.viewProp': { en: 'View Properties', km: 'ទស្សនាអចលនទ្រព្យ' },
+  'btn.register': { en: 'Register Interest', km: 'ចុះឈ្មោះសាកសួរ' },
+  'btn.reqDetails': { en: 'Request details', km: 'សាកសួរព័ត៌មានលម្អិត' },
+  'btn.schedule': { en: 'Schedule a Visit', km: 'កក់កាលបរិច្ឆេទរង់ចាំទស្សនា' },
+
+  // About Section
+  'about.eyebrow': { en: 'About the project', km: 'អំពីគម្រោងអចលនទ្រព្យ' },
+  'about.title': { en: 'A real estate brand shaped around prestige, comfort, and practical city access.', km: 'ម៉ាកសញ្ញាអចលនទ្រព្យដែលបង្កើតឡើងផ្អែកលើឧត្តមភាព ផាសុកភាព និងការតភ្ជាប់ផ្លូវក្រុងដ៏ងាយស្រួល។' },
+  'about.desc': { en: 'Borey Vimean Phnom Penh presents a refined residential environment for buyers who want more than a house. The project combines attractive exterior design, organized internal roads, and a clean neighborhood character that supports both lifestyle and long-term investment.', km: 'បុរី វិមានភ្នំពេញ ផ្តល់ជូននូវបរិយាកាសរស់នៅដ៏ស៊ីវិល័យ និងទំនើបសម្រាប់អ្នកទិញដែលចង់បានលើសពីផ្ទះធម្មតា។ គម្រោងនេះរួមបញ្ចូលគ្នានូវការរចនាខាងក្រៅដ៏ទាក់ទាញ ផ្លូវក្នុងបុរីមានសណ្តាប់ធ្នាប់ និងសហគមន៍ស្អាតល្អ ដែលគាំទ្រដល់ការរស់នៅប្រចាំថ្ងៃ និងការវិនិយោគរយៈពេលវែង។' },
+
+  // Featured Opportunities Section
+  'featured.eyebrow': { en: 'Featured opportunities', km: 'ឱកាសដ៏ពិសេសលេចធ្លោ' },
+  'featured.title': { en: 'Property options for family living and business growth.', km: 'ជម្រើសអចលនទ្រព្យសម្រាប់ការរស់នៅបែបគ្រួសារ និងការរីកចម្រើននៃអាជីវកម្ម។' },
+
+  // Location Section
+  'loc.eyebrow': { en: 'Location and contact', km: 'ទីតាំង និងទំនាក់ទំនង' },
+  'loc.title': { en: 'Plan your visit and speak with the sales team.', km: 'រៀបចំគម្រោងទស្សនា និងពិភាក្សាជាមួយក្រុមការងារលក់ផ្ទាល់។' },
+  'loc.whyTitle': { en: 'Why location matters', km: 'ហេតុអ្វីបានជាទីតាំងមានសារៈសំខាន់?' },
+  'loc.whyDesc1': { en: 'A strong borey project depends on access. This community is positioned to support daily commuting, school runs, client visits, and family convenience with a clean neighborhood identity.', km: 'គម្រោងបុរីដ៏រឹងមាំ និងជោគជ័យគឺអាស្រ័យលើផ្លូវធ្វើដំណើរ។ សហគមន៍មួយនេះស្ថិតក្នុងទីតាំងអំណោយផលខ្ពស់ក្នុងការគាំទ្រដល់ការធ្វើដំណើរប្រចាំថ្ងៃ ការទៅសាលារៀន ការជួបអតិថិជន និងភាពងាយស្រួលក្នុងគ្រួសារជាមួយអត្តសញ្ញាណសហគមន៍ដ៏ថ្លៃថ្នូរ។' },
+  'loc.whyDesc2': { en: 'Use the registration page to request a consultation, project presentation, or site visit with the Borey Vimean Phnom Penh team.', km: 'សូមប្រើប្រាស់ទំព័រចុះឈ្មោះដើម្បីស្នើសុំការប្រឹក្សាយោបល់ ការបង្ហាញគម្រោង ឬការចុះពិនិត្យមើលទីតាំងផ្ទាល់ជាមួយក្រុមការងារ បុរី វិមានភ្នំពេញ។' },
+  
+  // Visit Purpose Panel
+  'loc.purposeTitle': { en: 'Visit purpose', km: 'គោលបំណងនៃការទស្សនា' },
+  'loc.p1': { en: 'Home purchase consultation', km: 'ការប្រឹក្សាយោបល់លើការទិញលំនៅឋាន' },
+  'loc.p2': { en: 'Investment opportunity discussion', km: 'ការពិភាក្សាលើឱកាសវិនិយោគចំណេញខ្ពស់' },
+  'loc.p3': { en: 'Project walkthrough and availability update', km: 'ការដើរទស្សនាគម្រោងផ្ទាល់ និងបច្ចុប្បន្នភាពផ្ទះដែលនៅសល់' },
+  'loc.p4': { en: 'Financing and buyer support information', km: 'ព័ត៌មានស្តីពីសេវាហិរញ្ញវត្ថុ និងការគាំទ្រផ្នែកកម្ចីទិញផ្ទះ' }
+
 };
+
+ 

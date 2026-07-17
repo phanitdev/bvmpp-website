@@ -1,49 +1,21 @@
-<!-- <section class="hero">
-<div class="hero__video-wrapper">
-  <video 
-   src="assets/videos/promotion1.mp4"
-    autoplay 
-    muted 
-    [muted]="true" 
-    loop 
-    playsinline 
-    contenteditable="false"
-    class="hero__video-bg">
-  </video>
-</div>
-  <div class="hero__overlay"></div>
-  
-  <div class="hero__content">
-    <div class="hero__copy">
-      <p class="eyebrow">Borey Vimean Phnom Penh</p>
-      <h1>Professional real estate living designed for modern families in Phnom Penh.</h1>
-      <p class="hero__intro">
-        Explore a residential community that blends elegant architecture, strong accessibility, and the confidence of a trusted local development brand.
-      </p>
-
-      <div class="hero__actions">
-        <a routerLink="/property-list" class="button button--primary">View Properties</a>
-        <a routerLink="/registration" class="button button--primary">Register Interest</a>
-      </div>
-    </div>
-  </div>
-</section> -->
 <section class="listing-hero">
   <div class="listing-hero__inner listing-hero__inner--slider">
     <div class="slider-panel">
       <div class="slider-stage">
-        <img [src]="currentSlide.image" [alt]="currentSlide.title">
+        <!-- កែ alt ឱ្យបកប្រែតាមភាសា -->
+        <img [src]="currentSlide.image" [alt]="langService.translate(currentSlide.titleKey)">
       </div>
 
       <div class="slider-overlay">
         <div class="slider-copy">
-          <p class="eyebrow">Property showcase</p>
-          <h1>{{ currentSlide.title }}</h1>
-          <p>{{ currentSlide.description }}</p>
+          <p class="eyebrow">{{ langService.translate('hero.eyebrow') }}</p>
+          <!-- ⚡ បកប្រែ Title និង Description របស់ Slide Dynamic -->
+          <h1>{{ langService.translate(currentSlide.titleKey) }}</h1>
+          <p>{{ langService.translate(currentSlide.descKey) }}</p>
         </div>
         <div class="hero__actions">
-            <a routerLink="/property-list" class="button button--primary">View Properties</a>
-            <a routerLink="/registration" class="button button--primary">Register Interest</a>
+            <a routerLink="/property-list" class="button button--primary">{{ langService.translate('btn.viewProp') }}</a>
+            <a routerLink="/registration" class="button button--primary">{{ langService.translate('btn.register') }}</a>
         </div>
 
         <div class="slider-controls">
@@ -65,28 +37,30 @@
   </div>
 </section>
 
+<!-- ⚡ ផ្នែក Stats (ស្ថិតិ) -->
 <section class="stats">
   <div class="stats__inner">
     <article class="stat" *ngFor="let stat of stats">
       <strong>{{ stat.value }}</strong>
-      <span>{{ stat.label }}</span>
+      <!-- ⚡ បកប្រែ Label របស់ស្ថិតិ -->
+      <span>{{ langService.translate(stat.labelKey) }}</span>
     </article>
   </div>
 </section>
 
+<!-- ⚡ ផ្នែក About Section -->
 <section class="about section" id="about">
   <div class="section__intro">
-    <p class="eyebrow">About the project</p>
-    <h2>A real estate brand shaped around prestige, comfort, and practical city access.</h2>
+    <p class="eyebrow">{{ langService.translate('about.eyebrow') }}</p>
+    <h2>{{ langService.translate('about.title') }}</h2>
   </div>
 
   <div class="about__grid">
     <div class="about__copy">
-      <p>
-        Borey Vimean Phnom Penh presents a refined residential environment for buyers who want more than a house. The project combines attractive exterior design, organized internal roads, and a clean neighborhood character that supports both lifestyle and long-term investment.
-      </p>
+      <p>{{ langService.translate('about.desc') }}</p>
       <ul>
-        <li *ngFor="let item of highlights">{{ item }}</li>
+        <!-- ⚡ បកប្រែចំណុចលេចធ្លោ (Highlights List) -->
+        <li *ngFor="let item of highlights">{{ langService.translate(item) }}</li>
       </ul>
     </div>
 
@@ -96,72 +70,71 @@
   </div>
 </section>
 
+<!-- ⚡ ផ្នែក Opportunities / Listing Cards -->
 <section class="properties section">
   <div class="section__intro">
-    <p class="eyebrow">Featured opportunities</p>
-    <h2>Property options for family living and business growth.</h2>
+    <p class="eyebrow">{{ langService.translate('featured.eyebrow') }}</p>
+    <h2>{{ langService.translate('featured.title') }}</h2>
   </div>
 
-<section class="listing-grid">
-  <article class="listing-card" *ngFor="let property of propertyTypes">
-    <div class="image-container">
-      <img [src]="property.image" [alt]="property.title">
-      
-      <!-- ប៊ូតុងបេះដូងលេចនៅលើរូបភាព (Favorite Button) -->
-      <button class="btn-favorite" (click)="property.isFavorite = !property.isFavorite" type="button">
-        <!-- ប្រើ Unicode (❤️/🤍) ឬដូរទៅប្រើ Bootstrap Icons / Font Awesome ក៏បាន -->
-        <span>{{ property.isFavorite ? '❤️' : '🤍' }}</span>
-      </button>
-    </div>
-    
-    <div class="listing-card__body">
-      <div class="listing-card__meta">
-        <span>{{ property.type }}</span>
-        <span>{{ property.size }}</span>
-        <span>{{ property.purpose }}</span>
+  <section class="listing-grid">
+    <article class="listing-card" *ngFor="let property of propertyTypes">
+      <div class="image-container">
+        <img [src]="property.image" [alt]="langService.translate(property.titleKey)">
+        
+        <button class="btn-favorite" (click)="property.isFavorite = !property.isFavorite" type="button">
+          <span>{{ property.isFavorite ? '❤️' : '🤍' }}</span>
+        </button>
       </div>
       
-      <!-- ជួរចំណងជើង និងផ្កាយ (Title & Rating Row) -->
-      <div class="listing-card__title-row">
-        <h2>{{ property.title }}</h2>
-        <div class="listing-card__rating" *ngIf="property.rating">
-          <span class="star-icon">⭐</span>
-          <span class="rating-value">{{ property.rating }}</span>
+      <div class="listing-card__body">
+        <!-- ⚡ បកប្រែ Type និង Purpose របស់ផ្ទះនីមួយៗ -->
+        <div class="listing-card__meta">
+          <span>{{ langService.translate(property.typeKey) }}</span>
+          <span>{{ property.size }}</span>
+          <span>{{ langService.translate(property.purposeKey) }}</span>
         </div>
+        
+        <div class="listing-card__title-row">
+          <!-- ⚡ បកប្រែចំណងជើងផ្ទះ -->
+          <h2>{{ langService.translate(property.titleKey) }}</h2>
+          <div class="listing-card__rating" *ngIf="property.rating">
+            <span class="star-icon">⭐</span>
+            <span class="rating-value">{{ property.rating }}</span>
+          </div>
+        </div>
+        
+        <!-- ⚡ បកប្រែការពិពណ៌នាអំពីផ្ទះ -->
+        <p>{{ langService.translate(property.descriptionKey) }}</p>
+        <a routerLink="/registration">{{ langService.translate('btn.reqDetails') }}</a>
       </div>
-      
-      <p>{{ property.description }}</p>
-      <a routerLink="/registration">Request details</a>
-    </div>
-  </article>
+    </article>
+  </section>
 </section>
 
+<!-- ⚡ ផ្នែក Location & Contact -->
 <section class="location section" id="location">
   <div class="section__intro">
-    <p class="eyebrow">Location and contact</p>
-    <h2>Plan your visit and speak with the sales team.</h2>
+    <p class="eyebrow">{{ langService.translate('loc.eyebrow') }}</p>
+    <h2>{{ langService.translate('loc.title') }}</h2>
   </div>
 
   <div class="location__grid">
     <div class="location__panel">
-      <h3>Why location matters</h3>
-      <p>
-        A strong borey project depends on access. This community is positioned to support daily commuting, school runs, client visits, and family convenience with a clean neighborhood identity.
-      </p>
-      <p>
-        Use the registration page to request a consultation, project presentation, or site visit with the Borey Vimean Phnom Penh team.
-      </p>
+      <h3>{{ langService.translate('loc.whyTitle') }}</h3>
+      <p>{{ langService.translate('loc.whyDesc1') }}</p>
+      <p>{{ langService.translate('loc.whyDesc2') }}</p>
     </div>
 
     <div class="location__panel location__panel--accent">
-      <h3>Visit purpose</h3>
+      <h3>{{ langService.translate('loc.purposeTitle') }}</h3>
       <ul>
-        <li>Home purchase consultation</li>
-        <li>Investment opportunity discussion</li>
-        <li>Project walkthrough and availability update</li>
-        <li>Financing and buyer support information</li>
+        <li>{{ langService.translate('loc.p1') }}</li>
+        <li>{{ langService.translate('loc.p2') }}</li>
+        <li>{{ langService.translate('loc.p3') }}</li>
+        <li>{{ langService.translate('loc.p4') }}</li>
       </ul>
-      <a routerLink="/registration" class="button button--primary">Schedule a Visit</a>
+      <a routerLink="/registration" class="button button--primary">{{ langService.translate('btn.schedule') }}</a>
     </div>
   </div>
 </section>
