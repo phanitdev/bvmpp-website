@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { LanguageService } from '../../core/services/language.service'; // ⚡ ផ្ទៀងផ្ទាត់ផ្លូវទៅកាន់ Service ឱ្យត្រូវ
 
 @Component({
   selector: 'app-career',
@@ -6,148 +7,133 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./career.component.scss']
 })
 export class CareerComponent implements OnInit, OnDestroy {
+  // ⚡ Inject Language Service សម្រាប់ប្រើប្រាស់ប្តូរភាសានៅលើ HTML
+  langService = inject(LanguageService);
+
   currentSlideIndex = 0;
   private slideIntervalId?: ReturnType<typeof setInterval>;
 
+  // ⚡ បញ្ជីស្លាយអាជីពការងារ (Career Slides) ប្រើប្រាស់ Keys រួមដើម្បីងាយស្រួល Update
   readonly slides = [
-    {
-      image: 'assets/images/career1.jpg',
-      title: 'Festive community highlights',
-      description: 'Celebrate project updates, community moments, and seasonal promotions across Borey Vimean Phnom Penh.'
-    },
-    {
-      image: 'assets/images/career4.jpg',
-      title: 'North Land commercial showcase',
-      description: 'Featured commercial building presentation with polished architecture and project identity.'
-    },
-    {
-      image: 'assets/images/career3.jpg',
-      title: 'Special event announcement',
-      description: 'Promotional and ceremonial campaign artwork presented as part of the property showcase.'
-    },
-    {
-      image: 'assets/images/property-slide-12.png',
-      title: 'Customer appreciation feature',
-      description: 'A branded event slide highlighting project engagement and important dates.'
-    },
-    {
-      image: 'assets/images/property-slide-05.png',
-      title: 'Project promotion campaign',
-      description: 'Marketing artwork featuring current project offers, rewards, and featured property collections.'
-    },
-    {
-      image: 'assets/images/property-slide-06.png',
-      title: 'Commercial boulevard view',
-      description: 'North Land shophouse and commercial building frontage along the main project road.'
-    },
-    {
-      image: 'assets/images/property-slide-07.png',
-      title: 'Completed shophouse perspective',
-      description: 'Street-level view of finished commercial rows and the walkable business environment.'
-    },
-    {
-      image: 'assets/images/property-slide-08.png',
-      title: 'Ruby Villa feature',
-      description: 'A featured residential villa poster showing one of the premium home styles in the development.'
-    }
+    { image: 'assets/images/career1.jpg', titleKey: 'slide09.title', descKey: 'slide09.desc' },
+    { image: 'assets/images/career4.jpg', titleKey: 'slide10.title', descKey: 'slide10.desc' },
+    { image: 'assets/images/career3.jpg', titleKey: 'slide11.title', descKey: 'slide11.desc' },
+    { image: 'assets/images/property-slide-12.png', titleKey: 'slide12.title', descKey: 'slide12.desc' },
+    { image: 'assets/images/property-slide-05.png', titleKey: 'slide05.title', descKey: 'slide05.desc' },
+    { image: 'assets/images/property-slide-06.png', titleKey: 'slide06.title', descKey: 'slide06.desc' },
+    { image: 'assets/images/property-slide-07.png', titleKey: 'slide07.title', descKey: 'slide07.desc' },
+    { image: 'assets/images/property-slide-08.png', titleKey: 'slide08.title', descKey: 'slide08.desc' }
   ];
 
-  readonly newPromotion = [
+  // ⚡ បញ្ជីអចលនទ្រព្យដែលពាក់ព័ន្ធនឹងផ្នែកអាជីពការងារ ដោយប្រើប្រាស់ Translation Keys ថ្មី (career.*)
+  readonly career = [
     {
-      title: 'Luxury Villa Collection',
+      id: 1,
+      titleKey: 'career.id1.title',
       image: 'assets/images/career1.jpg',
-      type: 'Villa',
+      typeKey: 'career.type.villa',
       size: '320-480 sqm',
-      purpose: 'Family ownership',
-      description: 'Signature villas with generous floor area, elegant facades, and a layout that supports premium family living.'
+      purposeKey: 'career.purpose.family',
+      descriptionKey: 'career.id1.desc'
     },
     {
-      title: 'Modern Urban Residence',
+      id: 2,
+      titleKey: 'career.id2.title',
       image: 'assets/images/career2.jpg',
-      type: 'Residence',
+      typeKey: 'career.type.residence',
       size: '220-300 sqm',
-      purpose: 'Primary home',
-      description: 'A balanced choice for buyers who want a contemporary home with practical room flow and clean curb appeal.'
+      purposeKey: 'career.purpose.primary',
+      descriptionKey: 'career.id2.desc'
     },
     {
-      title: 'Commercial Shophouse',
+      id: 3,
+      titleKey: 'career.id3.title',
       image: 'assets/images/career3.jpg',
-      type: 'Shophouse',
+      typeKey: 'career.type.shophouse',
       size: '180-260 sqm',
-      purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      purposeKey: 'career.purpose.investment',
+      descriptionKey: 'career.id3.desc'
     },
     {
-      title: 'Commercial Shophouse',
+      id: 4,
+      titleKey: 'career.id4.title',
       image: 'assets/images/career4.jpg',
-      type: 'Shophouse',
+      typeKey: 'career.type.shophouse',
       size: '180-260 sqm',
-      purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      purposeKey: 'career.purpose.investment',
+      descriptionKey: 'career.id4.desc'
     },
     {
-      title: 'Commercial Shophouse',
+      id: 5,
+      titleKey: 'career.id5.title',
       image: 'assets/images/career5.jpg',
-      type: 'Shophouse',
+      typeKey: 'career.type.shophouse',
       size: '180-260 sqm',
-      purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      purposeKey: 'career.purpose.investment',
+      descriptionKey: 'career.id5.desc'
     },
-        {
-      title: 'Commercial Shophouse',
+    {
+      id: 6,
+      titleKey: 'career.id6.title',
       image: 'assets/images/career6.jpg',
-      type: 'Shophouse',
+      typeKey: 'career.type.shophouse',
       size: '180-260 sqm',
-      purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      purposeKey: 'career.purpose.investment',
+      descriptionKey: 'career.id6.desc'
     },
-        {
-      title: 'Commercial Shophouse',
+    { 
+      id: 7,
+      titleKey: 'career.id7.title',
       image: 'assets/images/career7.jpg',
-      type: 'Shophouse',
+      typeKey: 'career.type.shophouse',
       size: '180-260 sqm',
-      purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      purposeKey: 'career.purpose.investment',
+      descriptionKey: 'career.id7.desc'
     },
-        {
-      title: 'Commercial Shophouse',
+    {
+      id: 8,
+      titleKey: 'career.id8.title',
       image: 'assets/images/career8.jpg',
-      type: 'Shophouse',
+      typeKey: 'career.type.shophouse',
       size: '180-260 sqm',
-      purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      purposeKey: 'career.purpose.investment',
+      descriptionKey: 'career.id8.desc'
     },
-        {
-      title: 'Commercial Shophouse',
+    {
+      id: 9,
+      titleKey: 'career.id9.title',
       image: 'assets/images/career9.jpg',
-      type: 'Shophouse',
+      typeKey: 'career.type.shophouse',
       size: '180-260 sqm',
-      purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      purposeKey: 'career.purpose.investment',
+      descriptionKey: 'career.id9.desc'
     },
-        {
-      title: 'Commercial Shophouse',
+    {
+      id: 10,
+      titleKey: 'career.id10.title',
       image: 'assets/images/career10.jpg',
-      type: 'Shophouse',
+      typeKey: 'career.type.shophouse',
       size: '180-260 sqm',
-      purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      purposeKey: 'career.purpose.investment',
+      descriptionKey: 'career.id10.desc'
     },
-        {
-      title: 'Commercial Shophouse',
+    {
+      id: 11,
+      titleKey: 'career.id11.title',
       image: 'assets/images/career11.jpg',
-      type: 'Shophouse',
+      typeKey: 'career.type.shophouse',
       size: '180-260 sqm',
-      purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      purposeKey: 'career.purpose.investment',
+      descriptionKey: 'career.id11.desc'
     },
-            {
-      title: 'Commercial Shophouse',
+    {
+      id: 12,
+      titleKey: 'career.id12.title',
       image: 'assets/images/career12.jpg',
-      type: 'Shophouse',
+      typeKey: 'career.type.shophouse',
       size: '180-260 sqm',
-      purpose: 'Retail and investment',
-      description: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.'
+      purposeKey: 'career.purpose.investment',
+      descriptionKey: 'career.id12.desc'
     }
   ];
 

@@ -2,14 +2,17 @@
   <div class="listing-hero__inner listing-hero__inner--slider">
     <div class="slider-panel">
       <div class="slider-stage">
-        <img [src]="currentSlide.image" [alt]="currentSlide.title">
+        <!-- ⚡ បកប្រែ alt របស់រូបភាព slide -->
+        <img [src]="currentSlide.image" [alt]="langService.translate(currentSlide.titleKey)">
       </div>
 
       <div class="slider-overlay">
         <div class="slider-copy">
-          <p class="eyebrow">Property showcase</p>
-          <h1>{{ currentSlide.title }}</h1>
-          <p>{{ currentSlide.description }}</p>
+          <!-- ⚡ បកប្រែពាក្យនៅលើ Eyebrow -->
+          <p class="eyebrow">{{ langService.translate('prop.title') }}</p>
+          <!-- ⚡ បកប្រែ Title និង Description របស់ Slide នីមួយៗ -->
+          <h1>{{ langService.translate(currentSlide.titleKey) }}</h1>
+          <p>{{ langService.translate(currentSlide.descKey) }}</p>
         </div>
 
         <div class="slider-controls">
@@ -32,20 +35,31 @@
 </section>
 
 <section class="listing-grid">
-  <article class="listing-card" *ngFor="let property of newPromotion">
-    <div class="image-container">
-      <img [src]="property.image" [alt]="property.title">
+  <article class="listing-card" *ngFor="let property of career">
+    
+    <div class="image-container" [routerLink]="['/pages/property-detail', property.id || 1]" style="cursor: pointer;">
+      <!-- ⚡ បកប្រែ alt របស់រូបភាពផ្ទះ -->
+      <img [src]="property.image" [alt]="langService.translate(property.titleKey)">
     </div>
     
     <div class="listing-card__body">
       <div class="listing-card__meta">
-        <span>{{ property.type }}</span>
+        <!-- ⚡ បកប្រែប្រភេទផ្ទះ ទំហំ និងគោលបំណង -->
+        <span>{{ langService.translate(property.typeKey) }}</span>
         <span>{{ property.size }}</span>
-        <span>{{ property.purpose }}</span>
+        <span>{{ langService.translate(property.purposeKey) }}</span>
       </div>
-      <h2>{{ property.title }}</h2>
-      <p>{{ property.description }}</p>
-      <a routerLink="/registration">Request details</a>
+   
+      <!-- ⚡ បកប្រែចំណងជើងផ្ទះ -->
+      <h2 [routerLink]="['/pages/property-detail', property.id || 1]" style="cursor: pointer;">
+        {{ langService.translate(property.titleKey) }}
+      </h2>
+      
+      <!-- ⚡ បកប្រែការពិពណ៌នាលម្អិតអំពីផ្ទះ -->
+      <p>{{ langService.translate(property.descriptionKey) }}</p>
+      
+      <!-- ⚡ បកប្រែប៊ូតុង Request Details -->
+      <a routerLink="/registration">{{ langService.translate('prop.requestDetails') }}</a>
     </div>
   </article>
 </section>

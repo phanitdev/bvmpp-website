@@ -45,22 +45,22 @@ export const homeTranslations = {
   // ⚡ ៤. ផ្នែកប្រភេទលំនៅឋាន (Property Types)
   // ==========================================
   // Luxury Villa Collection
-  'prop.luxuryTitle': { en: 'Luxury Villa Collection', km: 'បណ្តុំវីឡាប្រណិតកម្រិតខ្ពស់' },
-  'prop.luxuryType': { en: 'Villa', km: 'វីឡា' },
-  'prop.luxuryPurpose': { en: 'Family ownership', km: 'សម្រាប់លំនៅឋានគ្រួសារ' },
-  'prop.luxuryDesc': { en: 'Signature villas with generous floor area, elegant facades, and a layout that supports premium family living.', km: 'វីឡាដែលមានទំហំដីធំទូលាយ រចនាបថខាងក្រៅដ៏ប្រណិត និងប្លង់ក្នុងផ្ទះដែលគាំទ្រដល់ការរស់នៅលំដាប់ខ្ពស់។' },
+  'home.luxuryTitle': { en: 'Luxury Villa Collection', km: 'វីឡាប្រណិតកម្រិតខ្ពស់' },
+  'home.luxuryType': { en: 'Villa', km: 'វីឡា' },
+  'home.luxuryPurpose': { en: 'Family ownership', km: 'សម្រាប់លំនៅឋានគ្រួសារ' },
+  'home.luxuryDesc': { en: 'Signature villas with generous floor area, elegant facades, and a layout that supports premium family living.', km: 'វីឡាដែលមានទំហំដីធំទូលាយ រចនាបថខាងក្រៅដ៏ប្រណិត និងប្លង់ក្នុងផ្ទះដែលគាំទ្រដល់ការរស់នៅលំដាប់ខ្ពស់។' },
 
   // Modern Urban Residence
-  'prop.modernTitle': { en: 'Modern Urban Residence', km: 'លំនៅឋានបែបសម័យថ្មី' },
-  'prop.modernType': { en: 'Residence', km: 'លំនៅឋាន' },
-  'prop.modernPurpose': { en: 'Primary home', km: 'ផ្ទះដំបូងសម្រាប់គ្រួសារ' },
-  'prop.modernDesc': { en: 'A balanced choice for buyers who want a contemporary home with practical room flow and clean curb appeal.', km: 'ជម្រើសដ៏ល្អឥតខ្ចោះសម្រាប់អ្នកចង់បានផ្ទះបែបសម័យទំនើប មានផាសុកភាព និងទាក់ទាញភ្នែក។' },
+  'home.modernTitle': { en: 'Modern Urban Residence', km: 'លំនៅឋានបែបសម័យថ្មី' },
+  'home.modernType': { en: 'Residence', km: 'លំនៅឋាន' },
+  'home.modernPurpose': { en: 'Primary home', km: 'ផ្ទះដំបូងសម្រាប់គ្រួសារ' },
+  'home.modernDesc': { en: 'A balanced choice for buyers who want a contemporary home with practical room flow and clean curb appeal.', km: 'ជម្រើសដ៏ល្អឥតខ្ចោះសម្រាប់អ្នកចង់បានផ្ទះបែបសម័យទំនើប មានផាសុកភាព និងទាក់ទាញភ្នែក។' },
 
   // Commercial Shophouse
-  'prop.shopTitle': { en: 'Commercial Shophouse', km: 'ផ្ទះអាជីវកម្ម (Shophouse)' },
-  'prop.shopType': { en: 'Shophouse', km: 'ផ្ទះអាជីវកម្ម' },
-  'prop.shopPurpose': { en: 'Retail and investment', km: 'សម្រាប់បើកហាង និងវិនិយោគ' },
-  'prop.shopDesc': { en: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.', km: 'សាងសង់ឡើងសម្រាប់ការបើកហាងលក់ដូរ ធ្វើជាការិយាល័យ ឬជួលត្រឡប់មកវិញក្នុងតំបន់សហគមន៍អ៊ូអរស្រាប់។' },
+  'home.shopTitle': { en: 'Commercial Shophouse', km: 'ផ្ទះអាជីវកម្ម (Shophouse)' },
+  'home.shopType': { en: 'Shophouse', km: 'ផ្ទះអាជីវកម្ម' },
+  'home.shopPurpose': { en: 'Retail and investment', km: 'សម្រាប់បើកហាង និងវិនិយោគ' },
+  'home.shopDesc': { en: 'Built for storefront presence, office usage, or rental strategy within an established residential setting.', km: 'សាងសង់ឡើងសម្រាប់ការបើកហាងលក់ដូរ ធ្វើជាការិយាល័យ ឬជួលត្រឡប់មកវិញក្នុងតំបន់សហគមន៍អ៊ូអរស្រាប់។' },
 
    'hero.eyebrow': { en: 'Property showcase', km: 'ការបង្ហាញអចលនទ្រព្យ' },
   'btn.viewProp': { en: 'View Properties', km: 'ទស្សនាអចលនទ្រព្យ' },
